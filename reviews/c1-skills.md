@@ -14,31 +14,31 @@ Keep every heading as it is, because `p3 check` reads them, and add a round by c
 
 ### Round 1
 
-**Run:** TODO
+**Run:** bench/runs/c0-baseline/20261124-210541-agent-architecture-m30-r3
 
 **My thoughts:**
-
-TODO
+The lesson was good, but its multiple-choice questions turn the right answer green while a "show answer" button sits right below, so it's too easy to skip the thinking. I'd remove the button, make learners retry until they get it, and make free-response questions require typing something before any feedback.
 
 **What changed:**
 
-- Kind: TODO
-- Files: TODO
-- Why: TODO
+- Kind: modified skill
+- Files: tutor/.claude/skills/teach/references/lesson-template.html, tutor/.claude/skills/teach/references/LESSONS.md
+- Why: Your thoughts said the show-answer buttons make practice too easy to skip, so multiple-choice questions lose the button and free-response questions need a typed attempt before the solution appears.
 
 ### Round 2
 
-**Run:** TODO
+**Run:** bench/runs/c0-baseline/20261124-210541-agent-architecture-m30-r3
 
 **My thoughts:**
 
-TODO
+The lesson is better with the typed answers, and its length felt right. I didn't change my mind about anything else in the lesson. My concern is now the tutor chat.
+Seems like it always replies on why it cant do something and overexplains it before teelling them what it can do.
 
 **What changed:**
 
-- Kind: TODO
-- Files: TODO
-- Why: TODO
+- Kind: new skill
+- Files: tutor/.claude/skills/tutor/SKILL.md
+- Why: Your thoughts said the tutor over-explains why it cannot do something, so a new tutor skill leads with a redirect to where to study and keeps the refusal to one sentence.
 
 ## Major review
 

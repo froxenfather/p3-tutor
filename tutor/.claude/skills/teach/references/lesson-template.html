@@ -90,6 +90,10 @@
     .check { border: 1px solid var(--rule); border-radius: 6px; padding: 1rem 1.25rem; margin: 1.75rem 0; }
     .check .label { color: var(--accent); }
     .check p { margin: 0.25rem 0; }
+    .check textarea { width: 100%; font: inherit; font-size: 0.95rem; color: inherit; background: transparent; border: 1px solid var(--rule); border-radius: 6px; padding: 0.5rem 0.75rem; margin: 0.5rem 0; box-sizing: border-box; }
+    .check [data-reveal] { font: inherit; font-size: 0.95rem; padding: 0.4rem 0.9rem; border: 1px solid var(--accent); border-radius: 6px; background: transparent; color: inherit; cursor: pointer; }
+    .check [data-reveal]:disabled { opacity: 0.45; cursor: not-allowed; }
+    .check .solution { margin-top: 0.75rem; }
     .choices { list-style: none; padding: 0; margin: 0.75rem 0 0; display: grid; gap: 0.5rem; }
     .choices button { width: 100%; text-align: left; font: inherit; font-size: 0.95rem; color: inherit; background: transparent;
                       border: 1px solid var(--rule); border-radius: 6px; padding: 0.55rem 0.8rem; cursor: pointer; }
@@ -156,10 +160,9 @@
     <div class="check">
       <span class="label">Recall</span>
       <p>{{A QUESTION ON SOMETHING THE LEARNER ALREADY LEARNED}}</p>
-      <details>
-        <summary>Check your answer</summary>
-        <p>{{THE ANSWER, AND HOW IT CONNECTS TO TODAY}}</p>
-      </details>
+      <textarea data-response rows="3" placeholder="Type your answer first"></textarea>
+      <button type="button" data-reveal disabled>Check my answer</button>
+      <div class="solution" hidden><p>{{THE ANSWER, AND HOW IT CONNECTS TO TODAY}}</p></div>
     </div>
   </section>
 
@@ -213,10 +216,6 @@
         <li><button type="button" data-correct="false" data-why="{{WHY THIS IS TEMPTING BUT WRONG}}">{{OPTION}}</button></li>
       </ul>
       <p class="feedback" aria-live="polite"></p>
-      <details>
-        <summary>Show the answer</summary>
-        <p>{{THE RIGHT OPTION AND WHY, FOR READERS WITHOUT SCRIPTS OR ON PAPER}}</p>
-      </details>
     </div>
   </section>
 
@@ -235,10 +234,9 @@
     <div class="check">
       <span class="label">Your turn</span>
       <p>{{A SIMILAR PROBLEM, WITH THE FIRST STEP GIVEN AND THE REST LEFT TO THE LEARNER}}</p>
-      <details>
-        <summary>Show a solution</summary>
-        <p>{{THE SOLUTION, STEP BY STEP}}</p>
-      </details>
+      <textarea data-response rows="4" placeholder="Type your attempt first"></textarea>
+      <button type="button" data-reveal disabled>Check my answer</button>
+      <div class="solution" hidden><p>{{THE SOLUTION, STEP BY STEP}}</p></div>
     </div>
   </section>
 
@@ -283,6 +281,13 @@
         if (out) { out.textContent = (right ? "Yes. " : "Not quite. ") + (button.getAttribute("data-why") || ""); }
       });
     });
+  });
+  // Free-response checks: the solution stays hidden until the learner has typed an attempt.
+  document.querySelectorAll("[data-response]").forEach(function (box) {
+    var area = box, wrap = box.parentNode;
+    var btn = wrap.querySelector("[data-reveal]"), sol = wrap.querySelector(".solution");
+    area.addEventListener("input", function () { btn.disabled = area.value.trim().length < 15; });
+    btn.addEventListener("click", function () { sol.hidden = false; });
   });
 </script>
 </body>
