@@ -1,0 +1,160 @@
+{
+  "duration_api_ms": 160963,
+  "stop_reason": "end_turn",
+  "session_id": "42fed6c9-09c5-4604-aa2f-4bcbd3e322e4",
+  "total_cost_usd": 0.5664052,
+  "usage": {
+    "input_tokens": 24,
+    "cache_creation_input_tokens": 63019,
+    "cache_read_input_tokens": 564209,
+    "output_tokens": 21054,
+    "output_tokens_details": {
+      "thinking_tokens": 1950
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 63019,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 563,
+        "cache_read_input_tokens": 73339,
+        "cache_creation_input_tokens": 4708,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 4708
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 24,
+      "outputTokens": 21054,
+      "cacheReadInputTokens": 564209,
+      "cacheCreationInputTokens": 63019,
+      "webSearchRequests": 0,
+      "costUSD": 0.5190849000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1950,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 63019,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-5-5": {
+      "inputTokens": 54288,
+      "outputTokens": 3783,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 4,
+      "costUSD": 0.04732030000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 868,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 0,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01FAuVVD55pcRxXy2BuLjmZy",
+      "tool_input": {
+        "command": "sed -e '/<style>/,/<\\/style>/d' -e '/<script>/,/<\\/script>/d' lessons/0001-*.html | sed 's/<[^>]*>/ /g' | wc -w"
+      }
+    }
+  ],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 26,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The 30-minute lesson on context and memory (O3) is written, with a quiz and a cheat sheet. I didn't check the lesson's word count or open its links, and I didn't test the practice buttons.\n\n- **Lesson:** `lessons/0001-context-and-memory-in-an-agent.html`. The win is that you can say, for each fact in the makerspace assistant, whether it belongs in the context window, in saved notes, or in a searchable manual. It covers:\n  - what the context window is, and why it affects cost and quality\n  - why the program re-sends the history on every step\n  - what to do when the window fills up\n  - notes as memory between sessions\n  - retrieval as a search tool over chunked manuals\n  - a worked example (Sam asking to cut acrylic) and a fading-steps practice task\n\n  It has three diagrams, five \"check yourself\" questions, and three misconception boxes.\n- **Quiz:** `quizzes/0002.json`, five items, with the key in `keys/0002.json`. Ask me for it when you want to take it.\n- **Cheat sheet:** `cheatsheets/context-and-memory.html`, a one-page table of where each kind of fact lives.\n- **Other files:** `assets/lesson.css` (shared lesson styling), `RESOURCES.md`, and a note in `NOTES.md`.\n\nThe facts and numbers come from Anthropic's pages on context engineering, context windows, the memory tool and contextual retrieval. I read the search-result summaries rather than opening the full pages, so check the links before you rely on them. Quiz 0001 is still ungraded.\n\nIf you want the lesson shorter or longer, say so and I'll redo it. Ask me anything about it in the chat.",
+  "ttft_ms": 1460,
+  "type": "result",
+  "duration_ms": 151334,
+  "uuid": "4720d469-417f-41c5-acb4-e1502c89f6bb",
+  "ttft_stream_ms": 1085,
+  "time_to_request_ms": 94,
+  "first_content_frame_ms": 1085,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 24,
+      "outputTokens": 21054,
+      "cacheReadInputTokens": 564209,
+      "cacheCreationInputTokens": 63019,
+      "webSearchRequests": 0,
+      "costUSD": 0.5190849000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1950,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 63019,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-5-5": {
+      "inputTokens": 54288,
+      "outputTokens": 3783,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 4,
+      "costUSD": 0.04732030000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 868,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 0,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-11-25T16:51:56.271Z"
+}

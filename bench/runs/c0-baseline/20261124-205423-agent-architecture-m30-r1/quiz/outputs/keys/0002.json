@@ -1,0 +1,49 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "c",
+      "rationale": "A workflow is orchestrated by predefined code paths; in an agent the model directs its own process and tool use. The difference is who owns the control flow. Calling a model several times (a), using tools (b) and checking answers with code (d) can all happen in either kind of system. Picking a or b shows the misconception that using tools or many calls makes an agent.",
+      "distractors": {"a": "M7", "b": "M7"}
+    },
+    {
+      "id": "q2",
+      "answer": "b",
+      "rationale": "The team's code fixes the steps (label, run the matching tool, write the reply), and the model only fills in a label and a reply. Code owns the control flow, so it is a workflow (a routing workflow). Tools and several calls (a) do not make an agent; a model choosing a label (c) is not the model directing its own process; and the count of tools (d) is not what separates the two.",
+      "distractors": {"a": "M7", "c": "M8", "d": "M9"}
+    },
+    {
+      "id": "q3",
+      "answer": "d",
+      "rationale": "When the steps are known in advance and the same every time, a fixed workflow does the job with fewer model calls, lower cost and more predictable behaviour. An agent's flexibility (a) is not needed here, and the belief that an agent is always the more capable or safer choice (b, c) is the misconception behind the wrong options.",
+      "distractors": {"a": "M8", "b": "M8", "c": "M8"}
+    },
+    {
+      "id": "q4",
+      "answer": 3000,
+      "tolerance": 0,
+      "rationale": "The agent makes 5 - 2 = 3 more calls per request, and 3 x 1,000 = 3,000 more calls. This is the extra cost an agent's flexibility brings when the steps do not need to vary."
+    },
+    {
+      "id": "q5",
+      "answer": "A workflow, because the team's code defines every path in advance and the model only picks among them, so the code still owns the control flow.",
+      "accepted": [
+        "workflow, because the steps are predefined in code and the model only chooses a branch",
+        "A workflow (routing): the branches and their steps are fixed by the team, not decided by the model",
+        "Workflow, because the model does not decide its own steps; the code runs fixed sequences"
+      ],
+      "rationale": "Choosing among predefined branches is routing, a kind of workflow: the model does not invent steps or decide when to stop. The answer needs both the verdict (workflow) and the reason (code or the team fixes the paths). Saying agent, or workflow with no reason about who controls the steps, is not fully correct; saying agent because the model makes a decision shows M8."
+    },
+    {
+      "id": "q6",
+      "answer": "When the steps are known in advance and the same each time, because a workflow is cheaper, faster and more predictable.",
+      "accepted": [
+        "When the task is predictable and well defined, so fixed code can run the steps at lower cost and with more consistency",
+        "When you know the sequence of steps ahead of time, a workflow gives lower cost and more predictable results",
+        "When the task can be broken into fixed steps, because it uses fewer model calls and is easier to test"
+      ],
+      "rationale": "Full credit needs the condition (steps known ahead of time, task predictable) and a benefit (lower cost, latency or more predictability). Only a benefit with no condition, or only the condition, is partial. Saying a workflow is better because agents are unreliable in general, or because workflows are smarter, shows M8 in reverse and is wrong."
+    }
+  ]
+}

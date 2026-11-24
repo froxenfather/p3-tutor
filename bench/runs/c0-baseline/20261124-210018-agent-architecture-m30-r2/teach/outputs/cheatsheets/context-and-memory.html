@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cheat sheet: where each fact lives in an agent</title>
+  <link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body>
+<main>
+  <div class="kicker">Cheat sheet &middot; O3</div>
+  <h1>Where each fact lives</h1>
+  <table>
+    <tr><th>Kind of fact</th><th>Where</th><th>Makerspace example</th></tr>
+    <tr><td>Needed this run only</td><td>Context window (history)</td><td>The question and tool results so far</td></tr>
+    <tr><td>Small, stable, about one user</td><td>Saved notes or a database row</td><td>Sam finished laser training</td></tr>
+    <tr><td>Large, fixed, shared</td><td>Retrieval from an indexed store</td><td>Acrylic settings in the laser manual</td></tr>
+    <tr><td>Changes constantly</td><td>Live tool call</td><td>Is the printer free at noon?</td></tr>
+  </table>
+  <ul>
+    <li>The model keeps nothing between calls; the program re-sends the history each call, so cost grows with every step.</li>
+    <li>A session ends and the window is gone; only what was saved survives.</li>
+    <li>Shrink the window: clear old tool results, summarize, return small results.</li>
+    <li>Retrieval: chunk, index (keyword and/or embeddings), search, return top chunks. Put the machine name and heading in each chunk.</li>
+  </ul>
+  <p><a href="../lessons/0001-context-and-memory-in-an-agent.html">Back to the lesson</a></p>
+</main>
+</body>
+</html>

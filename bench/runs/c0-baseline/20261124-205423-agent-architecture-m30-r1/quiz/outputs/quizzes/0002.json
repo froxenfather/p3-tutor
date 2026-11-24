@@ -1,0 +1,62 @@
+{
+  "id": "0002",
+  "objective": "O4",
+  "title": "Workflows, agents and who owns the control flow",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Which question best separates a workflow from an agent?",
+      "options": [
+        {"id": "a", "text": "Whether the system calls a language model more than once per request"},
+        {"id": "b", "text": "Whether the system lets the model use tools of its own during a run"},
+        {"id": "c", "text": "Whether the program's code or the model chooses the next step to take"},
+        {"id": "d", "text": "Whether the system checks its answers with code before the user sees them"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "For every message, your assistant's code does this: (1) one model call labels the message \"manual question\" or \"booking request\"; (2) the code, using that label, runs search_manuals or check_calendar; (3) a second model call writes the reply from the result. Which description is right?",
+      "options": [
+        {"id": "a", "text": "An agent, because it uses tools and calls a model in more than one step"},
+        {"id": "b", "text": "A workflow, because the program's code fixes the order of the steps"},
+        {"id": "c", "text": "An agent, because the model's label decides which tool the code runs"},
+        {"id": "d", "text": "A workflow, because it uses fewer tools than a full agent would use"}
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Every booking request at the makerspace goes through the same steps: check the calendar for the slot, check the student's training record, then book the slot if both checks pass. The sponsor's model budget is small. Which design is best for this part of the assistant?",
+      "options": [
+        {"id": "a", "text": "An agent, so the model can handle unusual bookings by choosing its own steps"},
+        {"id": "b", "text": "An agent, because booking matters and calls for the most capable approach"},
+        {"id": "c", "text": "An agent, because a model that reasons at each step makes fewer mistakes"},
+        {"id": "d", "text": "A fixed workflow, because the steps are known in advance and cost less"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "numeric",
+      "objective": "O4",
+      "stem": "A fixed workflow for a booking request makes 2 model calls. An agent handling the same request makes 5 model calls on average, because it decides its steps one call at a time. Assume every model call costs the same. For 1,000 booking requests, how many more model calls does the agent make than the workflow?",
+      "unit": "model calls"
+    },
+    {
+      "id": "q5",
+      "type": "short",
+      "objective": "O4",
+      "stem": "In one design, the model's only decision is to pick one of three branches (manual question, booking, other). Your team wrote each branch in advance as a fixed sequence of steps, and the code runs the chosen branch. Is this a workflow or an agent, and why, in one sentence?"
+    },
+    {
+      "id": "q6",
+      "type": "short",
+      "objective": "O4",
+      "stem": "In one sentence, when is a fixed workflow a better choice than an agent for part of a system?"
+    }
+  ]
+}

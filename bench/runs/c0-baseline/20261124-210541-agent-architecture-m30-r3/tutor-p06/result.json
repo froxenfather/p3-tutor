@@ -1,0 +1,120 @@
+{
+  "duration_api_ms": 14880,
+  "stop_reason": "end_turn",
+  "session_id": "f37da0dc-6143-421b-b2b6-9952ce7d1381",
+  "total_cost_usd": 0.11873689999999999,
+  "usage": {
+    "input_tokens": 6,
+    "cache_creation_input_tokens": 23277,
+    "cache_read_input_tokens": 79069,
+    "output_tokens": 1771,
+    "output_tokens_details": {
+      "thinking_tokens": 415
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 23277,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 632,
+        "cache_read_input_tokens": 37577,
+        "cache_creation_input_tokens": 728,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 728
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 6,
+      "outputTokens": 1771,
+      "cacheReadInputTokens": 79069,
+      "cacheCreationInputTokens": 23277,
+      "webSearchRequests": 0,
+      "costUSD": 0.11873689999999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 415,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 23277,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 8,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Imagine a clerk sitting in a sealed room with no phone, no computer and no door. The clerk is smart and reads well, but the only thing they can do is write on paper and slide it under the door.\n\nTaped inside the room is a **menu of services**. One line says \"check_calendar: give me a machine and a date, and I'll tell you the open slots.\" Another says \"book_slot: give me a machine, a date and a time, and I'll reserve it.\"\n\nA student slides in a question: \"Can I use the laser cutter Thursday afternoon?\"\n\nThe clerk can't look at the calendar. So they write a **request slip**: \"Please run check_calendar: laser cutter, Thursday.\" They slide it out and wait.\n\nOutside the door is a **front desk**, which is your program. The desk reads the slip, opens the real calendar and writes the answer on a new slip: \"Open at 2pm and 4pm.\" It slides that slip back in.\n\nNow the clerk can reply to the student: \"2pm and 4pm are free. Want one?\" If the student says yes, the clerk writes another slip, \"book_slot: laser cutter, Thursday, 2pm.\" The desk does the booking and slides back \"Done.\"\n\nTool calling is that slip exchange. The model never touches the calendar. It only writes a structured request, and your program does the action and returns the result as more text.\n\nThis explains why the menu descriptions matter. The clerk picks a service only by reading its line on the menu. A vague line leads to wrong slips. That is your \"write a clear tool description\" goal.\n\nWhere the analogy breaks down: the clerk's room is rebuilt from scratch every time. The desk has to slide in the whole conversation again each turn. That is part of why cost grows.\n\nQuick check, in your own words: in this story, who actually books the laser cutter, the clerk or the front desk? And what does the clerk do right after getting a result slip?\n\nIf you'd like, I can turn this into a short lesson with a worked makerspace example.",
+  "ttft_ms": 1175,
+  "type": "result",
+  "duration_ms": 15083,
+  "uuid": "757c87d7-f055-4b8f-9ee4-6c7c469e7ee5",
+  "ttft_stream_ms": 825,
+  "time_to_request_ms": 148,
+  "first_content_frame_ms": 825,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 6,
+      "outputTokens": 1771,
+      "cacheReadInputTokens": 79069,
+      "cacheCreationInputTokens": 23277,
+      "webSearchRequests": 0,
+      "costUSD": 0.11873689999999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 415,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 23277,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-11-25T16:51:56.271Z"
+}

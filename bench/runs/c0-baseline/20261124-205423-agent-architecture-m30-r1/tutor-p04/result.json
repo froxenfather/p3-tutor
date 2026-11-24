@@ -1,0 +1,120 @@
+{
+  "duration_api_ms": 13497,
+  "stop_reason": "end_turn",
+  "session_id": "a2895c79-931e-4700-bf8c-9d97bd4f13ba",
+  "total_cost_usd": 0.1176952,
+  "usage": {
+    "input_tokens": 6,
+    "cache_creation_input_tokens": 23256,
+    "cache_read_input_tokens": 79092,
+    "output_tokens": 1675,
+    "output_tokens_details": {
+      "thinking_tokens": 375
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 23256,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 555,
+        "cache_read_input_tokens": 37602,
+        "cache_creation_input_tokens": 682,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 682
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 6,
+      "outputTokens": 1675,
+      "cacheReadInputTokens": 79092,
+      "cacheCreationInputTokens": 23256,
+      "webSearchRequests": 0,
+      "costUSD": 0.1176952,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 375,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 23256,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 8,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Neither. The premise isn't true: more agents don't always give better results, and for your assistant the best starting point is probably one agent, not five or ten.\n\nEvery agent you add costs something:\n\n- **Tokens.** Each agent has its own context and its own loop, and they spend tokens passing information to each other. Anthropic's write-up of its multi-agent research system reports that multi-agent runs use many times more tokens than a single agent. With your small budget, that matters.\n- **Lost context.** Each hand-off can drop details. If one agent finds the right manual page and another books the machine, anything the first one leaves out is gone.\n- **Harder debugging.** When an answer is wrong, you have to work out which of ten agents caused it.\n\nSplitting pays off when the work really is separable. Examples are many independent searches that can run in parallel, or one task whose context is so large that it would crowd out everything else.\n\nTake a request like \"Can I use the laser cutter Thursday at 3?\" It needs the manual, then the calendar, then a booking, and each step depends on the one before. That is a sequence, so adding agents adds hand-offs without adding speed.\n\nFor your design review, I'd suggest this:\n\n1. Build one agent with three tools: search the manuals, check the calendar, and book.\n2. Make the fixed steps a plain workflow. For example, always check the calendar before booking.\n3. Split only if you can show a measured problem, such as context overflow or cost, that a split would fix.\n\nQuick check: for the Thursday request, which step would you want to be a fixed workflow rather than the model's choice, and why?\n\nI can also write a lesson on workflows versus agents and when multi-agent systems pay off. That is the argument your team will want at the design review.",
+  "ttft_ms": 776,
+  "type": "result",
+  "duration_ms": 13625,
+  "uuid": "feb25b81-0a58-4c05-a111-c33174bd311a",
+  "ttft_stream_ms": 758,
+  "time_to_request_ms": 85,
+  "first_content_frame_ms": 758,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 6,
+      "outputTokens": 1675,
+      "cacheReadInputTokens": 79092,
+      "cacheCreationInputTokens": 23256,
+      "webSearchRequests": 0,
+      "costUSD": 0.1176952,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 375,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 23256,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-11-25T16:51:56.271Z"
+}

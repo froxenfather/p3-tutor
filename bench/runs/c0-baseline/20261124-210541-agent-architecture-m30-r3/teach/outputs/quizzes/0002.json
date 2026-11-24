@@ -1,0 +1,56 @@
+{
+  "id": "0002",
+  "objective": "O3",
+  "title": "Context and memory in an agent",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "A student finishes machine training in a chat on Monday. On Thursday she opens a brand-new session. Your assistant has the agent loop and tools, but no saved notes. What does it know about Monday?",
+      "options": [
+        {"id": "a", "text": "Everything, because the model keeps its own memory of past chats"},
+        {"id": "b", "text": "A summary, which the model writes itself when each chat ends"},
+        {"id": "c", "text": "Nothing, because each new session starts with an empty context"},
+        {"id": "d", "text": "Only the last message, because the window keeps one final turn"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "numeric",
+      "objective": "O3",
+      "stem": "Your assistant's fixed part (system prompt, tool descriptions and the question) is 1,500 tokens. It calls the model, requests one tool that returns 2,000 tokens, calls the model again, requests a second tool that returns 500 tokens, and calls the model a third time for the final answer. Ignore the model's own short requests and its output. What is the total number of input tokens processed over all three calls?",
+      "unit": "tokens"
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "Your team has 40 machine manuals totalling about 2 million tokens, and a student asks about one setting on one machine. Which design best fits a small model budget?",
+      "options": [
+        {"id": "a", "text": "Index the manuals and give the model a search tool that returns a few chunks"},
+        {"id": "b", "text": "Paste all the manuals into the prompt, since larger windows can hold them"},
+        {"id": "c", "text": "Paste the manuals in once, then rely on the model to remember them"},
+        {"id": "d", "text": "Fine-tune the model on the manuals so that no search is needed"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "short",
+      "objective": "O3",
+      "stem": "In one or two sentences: why should the assistant save a student's training status in a file or database instead of just leaving it in the conversation history?"
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "Students often search your manuals for exact error codes such as \"E-417\". The embedding search sometimes returns chunks about similar codes instead. What is the best fix?",
+      "options": [
+        {"id": "a", "text": "Switch off retrieval, so that the model answers from its own knowledge"},
+        {"id": "b", "text": "Use only embedding search, since it finds meaning better than keywords"},
+        {"id": "c", "text": "Return many more chunks, so that the right one is always included"},
+        {"id": "d", "text": "Add keyword search, such as BM25, and combine it with embeddings"}
+      ]
+    }
+  ]
+}

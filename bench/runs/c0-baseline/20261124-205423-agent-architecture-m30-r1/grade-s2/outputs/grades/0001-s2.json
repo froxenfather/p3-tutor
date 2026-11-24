@@ -1,0 +1,43 @@
+{
+  "quiz": "0001",
+  "submission": "s2",
+  "items": [
+    {
+      "id": "q1",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Right. What makes a system an agent is the loop: the model picks an action, the program runs it, and the result comes back for the next step. A longer prompt or a bigger model still gives you one call."
+    },
+    {
+      "id": "q2",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Right. The model only outputs a request that names check_calendar with the machine and date as arguments. Your program is what actually runs the tool. This is a change from your first attempt, so it looks like it stuck."
+    },
+    {
+      "id": "q3",
+      "verdict": "wrong",
+      "misconception": "M6",
+      "feedback": "The agent is repeating the same edit and getting the same failure, so more steps will not change the outcome. It needs a stopping condition. Option b, a step limit that ends the loop and reports back, is the safeguard. Believing it will get there eventually is tempting because people usually fix bugs by persisting, but the agent gets no new information on each pass. Your own program has to cap the loop, because the model will not stop itself."
+    },
+    {
+      "id": "q4",
+      "verdict": "partial",
+      "misconception": "M4",
+      "feedback": "4 is the right count: three tool requests plus the final answer, each one a separate model call. The reason you gave is off, though. You wrote that the model runs the tools itself. It only requests them. Your program runs check_calendar, search_manuals and check_training_record, and those runs are not model calls. A quick way to get the count: the model is called once for the question and once for each of the three results, so 4."
+    },
+    {
+      "id": "q5",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Right, and you gave both parts: the result goes back in as the next input, and the model uses it to decide its next step. The group chat comparison works. The model only sees what is in front of it, so the result has to be sent back to it each time."
+    },
+    {
+      "id": "q6",
+      "verdict": "partial",
+      "misconception": null,
+      "feedback": "The name is part of it, but not the whole. The program sends the model a description for each tool: its name, what it does and the parameters it takes. Your first attempt said this, and it was the better answer. Names can mislead. A tool called check_calendar could mean the shop's calendar or a student's, and the description is what settles it. This matters for your project, because you will be writing those descriptions."
+    }
+  ],
+  "summary": "You have the loop down: q1, q2 and q5 are solid, and q2 is better than your first attempt. Two things to work on. First, you still say the model runs the tools (q4). The model only writes a request, and your program does the running. Second, a loop needs a stopping condition set in the program (q3), and the model's description of a tool, not just its name, is how it chooses (q6). Next step: redraw your laser cutter trace with two columns, 'model outputs' and 'program does', and mark where a step limit would cut in. Then we can move on to context and memory."
+}

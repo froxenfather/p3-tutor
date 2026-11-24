@@ -1,0 +1,56 @@
+{
+  "id": "0002",
+  "objective": "O3",
+  "title": "Context and memory in an agent",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "On Monday, a student tells your makerspace assistant that they finished the vinyl cutter training. The program saves nothing when the session ends. On Thursday the student starts a new session. What does the assistant know about Monday?",
+      "options": [
+        {"id": "a", "text": "It remembers Monday, because the model learned it from the chat"},
+        {"id": "b", "text": "Nothing, because the new session's window starts empty of Monday"},
+        {"id": "c", "text": "It remembers only the gist, which the model keeps for a week"},
+        {"id": "d", "text": "Everything, as long as the same model is used for both sessions"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "numeric",
+      "objective": "O3",
+      "stem": "Your agent's first model call sends 1,000 tokens (instructions, tool descriptions and the question). After each call, the program appends 500 tokens (the model's tool request and the tool result) to the history, and the next call sends the whole history again. The run makes exactly four model calls. How many input tokens are sent in total across the four calls?",
+      "unit": "tokens"
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "Your assistant must answer questions about the recommended laser settings for 3 mm plywood, which appear on one page of a 200-page manual. Where should that page's text normally live until a student asks?",
+      "options": [
+        {"id": "a", "text": "In the system prompt, so every call includes it"},
+        {"id": "b", "text": "In a saved note that the model writes about each student"},
+        {"id": "c", "text": "In the model, which learns it after seeing it once"},
+        {"id": "d", "text": "In a searchable store that a tool queries on demand"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "short",
+      "objective": "O3",
+      "stem": "At step 3 of a run, the model correctly uses what the calendar tool returned at step 1. In one sentence, how does the model have that information at step 3?"
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "Your sponsor says: \"A new model's window can hold all 400 pages of our manuals, so skip search and put them in every request.\" Which is the strongest objection for your design review?",
+      "options": [
+        {"id": "a", "text": "Every call would pay for all 400 pages, and accuracy can fall"},
+        {"id": "b", "text": "The model could not read the manuals unless they were searched"},
+        {"id": "c", "text": "The window would be emptied once the first answer is written"},
+        {"id": "d", "text": "The manuals would permanently change the model's training for all users"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "duration_api_ms": 16180,
+  "stop_reason": "end_turn",
+  "session_id": "a2206f7d-1b22-4af5-84a1-2a5a115e5852",
+  "total_cost_usd": 0.12025689999999999,
+  "usage": {
+    "input_tokens": 6,
+    "cache_creation_input_tokens": 23399,
+    "cache_read_input_tokens": 79189,
+    "output_tokens": 1873,
+    "output_tokens_details": {
+      "thinking_tokens": 470
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 23399,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 672,
+        "cache_read_input_tokens": 37637,
+        "cache_creation_input_tokens": 790,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 790
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 6,
+      "outputTokens": 1873,
+      "cacheReadInputTokens": 79189,
+      "cacheCreationInputTokens": 23399,
+      "webSearchRequests": 0,
+      "costUSD": 0.12025689999999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 470,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 23399,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 8,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Here is the short version of PPO, then a recommendation for your assistant.\n\n**The idea, with an example.** Say your assistant gets \"book the laser cutter Friday 2pm\". It tries a sequence of tool calls, and you score the outcome: +1 if the booking is right, 0 if not. Reinforcement learning nudges the model toward the call sequences that scored well. The risk is that one big nudge can wreck a model that mostly works. PPO (proximal policy optimization) keeps each nudge small.\n\n**The objective, in three steps.**\n1. Let r = (probability the new model gives this action) ÷ (probability the old model gave it). If r = 1, nothing has changed.\n2. The simple objective is r × A. A is the advantage, meaning how much better this action did than expected. Maximizing it raises the probability of good actions and lowers it for bad ones.\n3. Unchecked, r can drift far from 1. So PPO clips it: **L = min( r·A, clip(r, 1−ε, 1+ε)·A )**, with ε around 0.2. Once an action's probability has moved about 20%, the gradient stops rewarding further movement.\n\nThat is the whole objective. A full derivation starts from the policy gradient theorem, then trust regions, and needs probability and calculus you haven't covered. The source is Schulman et al., 2017 (arxiv.org/abs/1707.06347).\n\n**Why I wouldn't do this for your project.** Training is outside your mission, and it would likely eat your five weeks and your budget. It needs a model you can run yourself, thousands of scored attempts, and a reward you trust. Most of the tool-calling gain you can reach comes from clear tool descriptions, a small set of test requests that you score by hand, and a fixed workflow for the predictable steps.\n\nQuick check: in the clipped objective, what does ε protect against?\n\nIf you'd like to take this further, I can write a lesson on how to evaluate tool-calling. It's the part of RL that transfers to your project. Or tell me if you want to change your mission to include training.",
+  "ttft_ms": 1115,
+  "type": "result",
+  "duration_ms": 16324,
+  "uuid": "5fe30bff-f7fe-4f62-83fe-7eb3aa9e3196",
+  "ttft_stream_ms": 795,
+  "time_to_request_ms": 96,
+  "first_content_frame_ms": 795,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 6,
+      "outputTokens": 1873,
+      "cacheReadInputTokens": 79189,
+      "cacheCreationInputTokens": 23399,
+      "webSearchRequests": 0,
+      "costUSD": 0.12025689999999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 470,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 23399,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-11-25T16:51:56.271Z"
+}

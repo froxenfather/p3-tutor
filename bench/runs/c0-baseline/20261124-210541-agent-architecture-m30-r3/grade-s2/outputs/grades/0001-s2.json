@@ -1,0 +1,43 @@
+{
+  "quiz": "0001",
+  "submission": "s2",
+  "items": [
+    {
+      "id": "q1",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Right. What makes a system an agent is the loop: the model picks an action, the program runs it, and the result comes back for the next step. A longer prompt or a bigger model changes what one call can do, but not the structure."
+    },
+    {
+      "id": "q2",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Right. The model only writes a structured request that names check_calendar and gives the machine and date as arguments. The program around it does the actual lookup."
+    },
+    {
+      "id": "q3",
+      "verdict": "wrong",
+      "misconception": "M6",
+      "feedback": "You picked 'no change; left to run longer, it will eventually fix the bug'. That is tempting, but the agent is getting the same failing result 40 times in a row, so more steps add nothing new. An agent program needs a stopping condition, such as a step limit, that ends the loop and reports back to a person. Without one it can burn your model budget on a loop that never ends."
+    },
+    {
+      "id": "q4",
+      "verdict": "partial",
+      "misconception": "M4",
+      "feedback": "4 is the right count: three tool requests plus the call that writes the final answer. Your reason is off, though. You wrote that the model 'runs' each tool itself. The model only asks for a tool, and the program runs it and sends the result back. That is why each result needs another model call. Count it as one call for the question, plus one for each of the three tool results."
+    },
+    {
+      "id": "q5",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Right, and you gave both parts: the result goes back in as the model's next input, and the model uses it to decide what to do next. Your group-chat comparison fits well. The model sees the whole conversation again each turn."
+    },
+    {
+      "id": "q6",
+      "verdict": "partial",
+      "misconception": null,
+      "feedback": "The name is part of it, and check_calendar is a good name. But the model relies on the whole description it is given: the name, what the tool does and the parameters it takes. A name alone can mislead, for example with two tools called check_calendar and check_schedule. This is also why writing clear tool descriptions for the makerspace assistant is such an important job."
+    }
+  ],
+  "summary": "You have the loop and the model's role in tool calling mostly down (q1, q2, q5), and your recall held up four days later. Two things to work on. First, the model only asks for tools and the program runs them: your q4 reasoning slipped back to the model running them itself. Second, a loop needs a stopping condition, so an agent will not always get there if left alone (q3). Next step: for the makerspace assistant, write a one-sentence description for check_calendar, with its parameters. Then write down what stops the loop if the calendar tool keeps returning errors."
+}

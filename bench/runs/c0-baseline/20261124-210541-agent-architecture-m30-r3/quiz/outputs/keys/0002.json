@@ -1,0 +1,45 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "b",
+      "rationale": "The difference is who owns the control flow: in a workflow, code written in advance sets the path; in an agent, the model decides its own steps and tool use. The number of model calls (a), whether tools are used (c) and whether a model is involved (d) do not separate the two, since workflows can call a model several times and use tools.",
+      "distractors": {"a": "M8", "c": "M8", "d": "M8"}
+    },
+    {
+      "id": "q2",
+      "answer": "c",
+      "rationale": "Your code fixes the order of the steps and the model never chooses what happens next, so this is a workflow. Calling the model twice (a) or using a tool (b) does not make it an agent, and the model is in fact called twice, so (d) is false.",
+      "distractors": {"a": "M8", "b": "M8"}
+    },
+    {
+      "id": "q3",
+      "answer": "In an agent the model decides the next step; in a workflow the code (the developer's program) decides.",
+      "accepted": [
+        "The model in an agent, the code in a workflow",
+        "Agent: the model decides. Workflow: predefined code decides.",
+        "In an agent the model chooses the next step, and in a workflow the developer's pre-written code does"
+      ],
+      "rationale": "Both halves are needed: the model owns the control flow in an agent, and fixed code the developer wrote in advance owns it in a workflow. Giving only one half is partial. Saying the user decides, or that the agent's program does while the model only answers, is wrong."
+    },
+    {
+      "id": "q4",
+      "answer": "d",
+      "rationale": "The weekly email has the same steps every time, so nothing needs the model to choose a path and a fixed workflow is cheaper and more predictable. The other three tasks depend on what earlier results show, so the steps cannot be fixed in advance; those suit an agent.",
+      "distractors": {"a": "M7", "b": "M7", "c": "M7"}
+    },
+    {
+      "id": "q5",
+      "answer": "a",
+      "rationale": "When the steps never vary, code can run them directly, so the model is called only where language is needed: fewer calls, lower cost, and the same path every run. A workflow does not change the context window (b), does not make a model infallible (c), and agents can be given step limits (d).",
+      "distractors": {"c": "M7"}
+    },
+    {
+      "id": "q6",
+      "answer": 2,
+      "tolerance": 0,
+      "rationale": "The agent makes one call per tool request plus one for the final answer: 3 + 1 = 4 calls. The workflow used 2, so the agent used 4 - 2 = 2 more. Answering 4 reports the agent's total, not the difference."
+    }
+  ]
+}

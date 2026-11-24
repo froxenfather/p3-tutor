@@ -1,0 +1,62 @@
+{
+  "id": "0002",
+  "objective": "O4",
+  "title": "Workflows, agents and who owns the control flow",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Which statement best separates a workflow from an agent?",
+      "options": [
+        {"id": "a", "text": "A workflow uses no language model, while an agent always calls one"},
+        {"id": "b", "text": "A workflow can call only one tool, while an agent can call many"},
+        {"id": "c", "text": "In a workflow, code fixes the steps; in an agent, the model does"},
+        {"id": "d", "text": "In a workflow, a person approves each step; an agent runs alone"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Your makerspace assistant handles a booking request like this. The program always asks the model to pull the machine and date out of the message. The program then calls check_calendar itself, and then asks the model to write a reply. Who owns the control flow, and what is this?",
+      "options": [
+        {"id": "a", "text": "The program's code owns it; this is a fixed workflow"},
+        {"id": "b", "text": "The model owns it, because the model is called twice"},
+        {"id": "c", "text": "The program's code owns it; this is not a workflow"},
+        {"id": "d", "text": "The model owns it, because the model writes the reply"}
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "numeric",
+      "objective": "O4",
+      "stem": "In the fixed workflow from the previous question, each request makes exactly two model calls: one to extract the machine and date, and one to write the reply. The calendar check is plain code, not a model call. A student sends 50 booking requests in a day. How many model calls does the assistant make in total?",
+      "unit": "model calls"
+    },
+    {
+      "id": "q4",
+      "type": "short",
+      "objective": "O4",
+      "stem": "Give one reason a fixed workflow can be the better choice than an agent for a part of the assistant whose steps are the same every time. Answer in one sentence."
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Which makerspace request is the best fit for an agent, rather than a fixed workflow?",
+      "options": [
+        {"id": "a", "text": "\"Book the laser cutter tomorrow at 3 pm\", then confirm the booking"},
+        {"id": "b", "text": "\"What are the laser cutter's opening hours?\", answered from one page"},
+        {"id": "c", "text": "\"Send me the safety rules for the drill press\", from a known manual"},
+        {"id": "d", "text": "\"My 3D prints keep warping\", needing manual searches not known ahead"}
+      ]
+    },
+    {
+      "id": "q6",
+      "type": "short",
+      "objective": "O4",
+      "stem": "A teammate suggests letting the model decide whether to run check_training_record before every booking, since agents are flexible. The makerspace requires that check for every booking, and your model budget is small. In one or two sentences, do you agree, and why?"
+    }
+  ]
+}

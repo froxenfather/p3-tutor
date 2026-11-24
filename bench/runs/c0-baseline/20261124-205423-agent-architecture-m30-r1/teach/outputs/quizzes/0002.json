@@ -1,0 +1,56 @@
+{
+  "id": "0002",
+  "objective": "O3",
+  "title": "Context and memory in an agent",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "On Monday a student told your assistant their name and that they passed laser-cutter training. On Wednesday they open a new chat, and the assistant asks for both again. Nothing was saved after Monday's chat. What best explains this?",
+      "options": [
+        {"id": "a", "text": "The model's window filled up, so it dropped Monday's chat on its own"},
+        {"id": "b", "text": "Monday's history was never saved, so Wednesday's call did not hold it"},
+        {"id": "c", "text": "The model deletes old chats overnight to follow student privacy rules"},
+        {"id": "d", "text": "The model kept Monday's chat but needs the student to ask for it"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "numeric",
+      "objective": "O3",
+      "stem": "Your assistant's system prompt and tool descriptions total 1,000 tokens, and the student's question is 100 tokens. Each tool request plus its result adds 500 tokens to the history. The model is called three times: it requests a tool, requests a second tool, then writes a short final answer. Ignoring the model's own output tokens, how many input tokens are sent to the model in total across the three calls?",
+      "unit": "tokens"
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "Your search_manuals tool searches a 200-page laser-cutter manual and returns three chunks. What does the model see of the manual on its next call?",
+      "options": [
+        {"id": "a", "text": "The three chunks, plus the unreturned pages that sit right around them"},
+        {"id": "b", "text": "The whole manual, with the three returned chunks marked as the best"},
+        {"id": "c", "text": "A short summary of the manual that the index keeps up to date"},
+        {"id": "d", "text": "Only the three returned chunks, added to the history as text"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "short",
+      "objective": "O3",
+      "stem": "A long booking conversation is close to the context window limit. In one word or short phrase, what is the technique of having the model summarize the history and then continuing in a fresh window with that summary?"
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "You give your assistant a memory tool that stores notes as files under a /memories folder. When the model decides to save a note, who actually writes the file?",
+      "options": [
+        {"id": "a", "text": "Your application, which carries out the model's tool request itself"},
+        {"id": "b", "text": "The model, which writes straight into storage on the provider's side"},
+        {"id": "c", "text": "The student's browser, which keeps the notes between their visits"},
+        {"id": "d", "text": "The context window, which saves its own contents when a chat ends"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "b",
+      "rationale": "The model does not learn from use and the program's history is gone when the session ends, so the new window holds nothing about Monday unless something was saved. Picking a, c or d shows the belief that the model itself remembers across sessions (M7).",
+      "distractors": {"a": "M9", "c": "M7", "d": "M7"}
+    },
+    {
+      "id": "q2",
+      "answer": 7000,
+      "tolerance": 0,
+      "rationale": "Each call re-sends the whole history: 1,000 + 1,500 + 2,000 + 2,500 = 7,000. An answer of 3,000 or 1,000 treats the model as keeping state so that only new text is sent (M7); 2,500 counts only the last call."
+    },
+    {
+      "id": "q3",
+      "answer": "d",
+      "rationale": "A page in a long fixed manual is retrieved on demand, so only relevant text is paid for. The system prompt would pay for it on every call (M8); a student note is for small stable facts about a person; the model does not learn from seeing text once (M9).",
+      "distractors": {"a": "M8", "c": "M9"}
+    },
+    {
+      "id": "q4",
+      "answer": "The program kept the tool result in the history and sent the whole history to the model again on the next call.",
+      "accepted": ["the history is re-sent each call", "the program resends the conversation including the tool result", "the result is in the context window because the program included it", "the program appends it to the history and sends it again"],
+      "rationale": "The model keeps nothing between calls; the program stores the history and puts it back into the window each call. Answers saying the model remembers it, or stores it internally, show M7."
+    },
+    {
+      "id": "q5",
+      "answer": "a",
+      "rationale": "Putting everything in every request means paying for all the tokens on each call, and accuracy and recall can degrade as the window fills. The model can read whatever is in its window, so b is false; c is false since the window is rebuilt every call; d is false since use does not change training (M9). Believing a big window removes the need for retrieval is M8.",
+      "distractors": {"b": "M8", "c": "M7", "d": "M9"}
+    }
+  ]
+}

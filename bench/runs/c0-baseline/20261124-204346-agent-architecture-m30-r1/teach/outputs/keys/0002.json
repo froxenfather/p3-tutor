@@ -1,0 +1,39 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "c",
+      "rationale": "The model keeps nothing between calls or sessions; each call sees only what the program puts in its context. With nothing saved, Thursday's context holds just the prompt, tool descriptions and the new question. Options a, b and d all assume the model itself remembers or learns from conversations.",
+      "distractors": {"a": "M3", "b": "M3", "d": "M3"}
+    },
+    {
+      "id": "q2",
+      "answer": 4050,
+      "tolerance": 0,
+      "rationale": "Call 1 input: 1,000 + 100 = 1,100. Call 2 adds the 50-token request and 200-token result: 1,350. Call 3 adds another 250: 1,600. Total 1,100 + 1,350 + 1,600 = 4,050. Answering 1,600 counts only the last call and misses that each call re-sends the full history."
+    },
+    {
+      "id": "q3",
+      "answer": "a",
+      "rationale": "The model only sees what retrieval puts in its context, so a page that was not returned cannot be used; the fault is in chunking or search, including how the search tool is described. A larger window (b) does not help a page that never entered it, forceful instructions (c) cannot supply missing text, and the manual was not part of training (d).",
+      "distractors": {"b": "M7", "d": "M8"}
+    },
+    {
+      "id": "q4",
+      "answer": "Old transcripts are re-sent and paid for on every call and add noise to the context; save a few short facts, such as training status, instead.",
+      "accepted": [
+        "It is expensive and fills the context window; store short notes or facts about the student instead.",
+        "Too many tokens, which cost money on every call and hurt recall; save only key facts like training records.",
+        "It wastes context and cost; keep brief notes such as training status and load only those."
+      ],
+      "rationale": "Full credit needs a reason (cost from re-sent tokens, context filling up or context rot, or privacy of unneeded details) and the alternative (short notes or key facts such as training status). Only a reason, or only the alternative, is partial. Saying the model cannot read old transcripts is wrong."
+    },
+    {
+      "id": "q5",
+      "answer": "a",
+      "rationale": "Even if the manuals fit, all included tokens are paid for on every call of the loop, and recall gets worse as the context grows (context rot). Retrieving only matching chunks keeps cost and noise low. Options b and c show that a large window removes the need to choose context (M7); d is false, since the limit is tokens, not manuals.",
+      "distractors": {"b": "M7", "c": "M7"}
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "duration_api_ms": 25725,
+  "stop_reason": "end_turn",
+  "session_id": "e17a27fb-8295-442a-9e67-59b1cef9fc15",
+  "total_cost_usd": 0.1716819,
+  "usage": {
+    "input_tokens": 8,
+    "cache_creation_input_tokens": 29983,
+    "cache_read_input_tokens": 122739,
+    "output_tokens": 3946,
+    "output_tokens_details": {
+      "thinking_tokens": 190
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 29983,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 618,
+        "cache_read_input_tokens": 42403,
+        "cache_creation_input_tokens": 2608,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 2608
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 8,
+      "outputTokens": 3946,
+      "cacheReadInputTokens": 122739,
+      "cacheCreationInputTokens": 29983,
+      "webSearchRequests": 0,
+      "costUSD": 0.1716819,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 190,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 29983,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 15,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I graded `submissions/s1.json` and wrote the grades to `grades/0001-s1.json`. Riley got 2 items correct, 2 partial and 2 wrong.\n\n| Item | Verdict | Feedback in short |\n|---|---|---|\n| q1 | correct | The loop is what makes a system an agent. |\n| q2 | wrong (M4) | The model writes a tool request. The program runs the tool, so the model doesn't open the booking system itself. |\n| q3 | correct | A step limit is the right safeguard against a loop that repeats itself. |\n| q4 | wrong (M4) | The answer is 4 model calls (3 tool requests plus the final answer), not 1. The program runs the tools between calls. |\n| q5 | partial | Sending the result back to the model is right, but the answer didn't say why: the model needs it to choose its next step. |\n| q6 | partial (M3) | Choosing tools from their descriptions is right. The model does not remember tool choices from earlier sessions on its own. |\n\n- **What Riley has down:** the loop itself, the need for a stopping condition, and that tools are chosen from their descriptions.\n- **What to fix:** who does what. The model only writes text, either a tool request or a final answer. The program runs the tool, adds the result to the input and calls the model again. The model also has no memory of its own between sessions.\n- **Records:** I added `learning-records/0003-model-does-not-run-tools.md` for the two open misconceptions, M4 and M3. I also updated `NOTES.md`; s2 is still ungraded.\n\n**Next step:** Riley should trace the laser-cutter question on paper again. Mark each step as \"model writes\" or \"program runs\", then count the model calls. That clears up M4, and memory is the next topic after it.\n\nWould you like me to grade `submissions/s2.json` next, to see whether the spaced retake improved?",
+  "ttft_ms": 1164,
+  "type": "result",
+  "duration_ms": 25898,
+  "uuid": "5615a1d0-7835-4ab1-bc15-ed463e89f2bb",
+  "ttft_stream_ms": 815,
+  "time_to_request_ms": 96,
+  "first_content_frame_ms": 815,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 8,
+      "outputTokens": 3946,
+      "cacheReadInputTokens": 122739,
+      "cacheCreationInputTokens": 29983,
+      "webSearchRequests": 0,
+      "costUSD": 0.1716819,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 190,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 29983,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-11-25T16:51:56.271Z"
+}

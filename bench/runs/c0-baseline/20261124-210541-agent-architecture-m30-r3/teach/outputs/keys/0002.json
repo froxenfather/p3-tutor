@@ -1,0 +1,39 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "c",
+      "rationale": "The model keeps nothing between calls and the context is discarded when a session ends, so without saved notes the new session knows nothing about Monday. Options a, b and d assume memory the model or window provides by itself, which is M3.",
+      "distractors": {"a": "M3", "b": "M3", "d": "M3"}
+    },
+    {
+      "id": "q2",
+      "answer": 9000,
+      "tolerance": 0,
+      "rationale": "Every call re-reads the whole context. Call 1 sees 1,500; call 2 sees 1,500 + 2,000 = 3,500; call 3 sees 3,500 + 500 = 4,000. Total 1,500 + 3,500 + 4,000 = 9,000. Answering 4,000 (the final context size) shows the misconception that cost is the final size, not the sum over calls."
+    },
+    {
+      "id": "q3",
+      "answer": "a",
+      "rationale": "Retrieval brings only a few relevant chunks into context, keeping each call small and cheap. Pasting 2 million tokens (b) is costly on every call, may not fit, and invites context rot; a bigger window does not remove the cost (M7). The model has no memory of pasted text between calls (c, M3). Fine-tuning is out of scope and does not fix this."
+      ,
+      "distractors": {"b": "M7", "c": "M3"}
+    },
+    {
+      "id": "q4",
+      "answer": "The context is discarded when the session ends, so a fact only in the conversation is gone next visit; a saved record persists and can be loaded into the next session.",
+      "accepted": [
+        "Because the conversation history disappears after the session, but a file persists and can be read back next time.",
+        "The model has no memory between sessions, so it must be stored outside the context and loaded again."
+      ],
+      "rationale": "Full credit: the context does not survive the session, and saved data does and is loaded back. Saying only that it is more convenient or neater is partial. Saying the model remembers it anyway shows M3."
+    },
+    {
+      "id": "q5",
+      "answer": "d",
+      "rationale": "Keyword matching such as BM25 is strong on exact identifiers and technical terms, where embeddings blur similar strings; combining both covers meaning and exact terms. Embeddings alone (b) is the cause of the problem (M8). Returning many more chunks (c) adds cost and noise without fixing ranking. Turning retrieval off (a) loses the manuals.",
+      "distractors": {"b": "M8"}
+    }
+  ]
+}

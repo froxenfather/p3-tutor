@@ -1,0 +1,47 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "c",
+      "rationale": "The difference is who owns the control flow: in a workflow, code written by the developer fixes the steps and branches; in an agent, the model chooses the next step at run time. Workflows can call tools too (the code calls them), size of model is unrelated, and the number of steps does not decide it (a workflow can have many steps). Options a, b and d show the misconception that the difference is tools, size or step count.",
+      "distractors": {"a": "M7", "b": "M7", "d": "M7"}
+    },
+    {
+      "id": "q2",
+      "answer": "a",
+      "rationale": "The code fixes the order and the branch; the model only fills in a step (a label, a reply). A model making a decision inside a step, or being called several times, does not make the design an agent, because the code still owns the control flow. A workflow can use model calls, so d is wrong.",
+      "distractors": {"b": "M7", "c": "M7", "d": "M8"}
+    },
+    {
+      "id": "q3",
+      "answer": "d",
+      "rationale": "A booking with the machine, date and time already given follows known steps (check training, check calendar, book, confirm), so code can own the flow: cheaper, predictable and easy to test. The other three are open-ended, where the needed steps cannot be listed in advance, and so suit an agent. Picking a, b or c shows the belief that an agent is the better design everywhere.",
+      "distractors": {"a": "M9", "b": "M9", "c": "M9"}
+    },
+    {
+      "id": "q4",
+      "answer": "It is cheaper and more predictable, because the code runs the known steps and the model is not paid to decide them each time.",
+      "accepted": [
+        "cheaper and more predictable",
+        "It is cheaper and more reliable",
+        "It is cheaper and more predictable",
+        "It is more predictable and cheaper",
+        "predictable and cheaper"
+      ],
+      "rationale": "A fixed workflow uses fewer model calls (lower cost) and always follows the same steps, so its behaviour can be tested and promised. Naming only one of the two (cost or predictability) is partial. Saying a workflow is smarter or more capable is wrong."
+    },
+    {
+      "id": "q5",
+      "answer": "b",
+      "rationale": "Control flow is owned by whoever picks the next step. The code fixes the first two steps, and in the final step the model chooses which tool to call and when to stop, so it is a workflow with an agent inside its last step. Designs like this are common and keep the open-ended part small. Option a ignores the loop; option c ignores the code that fixes the first steps.",
+      "distractors": {"c": "M7"}
+    },
+    {
+      "id": "q6",
+      "answer": 40,
+      "tolerance": 0.5,
+      "rationale": "Extra calls per request are 6 - 2 = 4, which cost 4 x $0.02 = $0.08 per request; over 500 requests that is 500 x $0.08 = $40. Each loop step is a separate model call, which is why an agent costs more when the steps were predictable all along."
+    }
+  ]
+}

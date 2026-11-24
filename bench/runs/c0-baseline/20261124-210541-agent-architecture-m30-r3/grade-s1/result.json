@@ -1,0 +1,120 @@
+{
+  "duration_api_ms": 25351,
+  "stop_reason": "end_turn",
+  "session_id": "38ebf63d-8172-4797-9b6c-cba565d5275f",
+  "total_cost_usd": 0.17032999999999998,
+  "usage": {
+    "input_tokens": 8,
+    "cache_creation_input_tokens": 30112,
+    "cache_read_input_tokens": 120660,
+    "output_tokens": 3780,
+    "output_tokens_details": {
+      "thinking_tokens": 180
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 30112,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 605,
+        "cache_read_input_tokens": 42670,
+        "cache_creation_input_tokens": 2470,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 2470
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 8,
+      "outputTokens": 3780,
+      "cacheReadInputTokens": 120660,
+      "cacheCreationInputTokens": 30112,
+      "webSearchRequests": 0,
+      "costUSD": 0.17032999999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 180,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 30112,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 15,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I graded submission s1 for quiz 0001 and wrote the grades to `grades/0001-s1.json`. You got 2 items correct, 2 partial and 2 wrong.\n\n| Item | Verdict | Why |\n|---|---|---|\n| q1 | correct | The loop is what makes a system an agent. |\n| q2 | wrong | The model doesn't open the booking system. It outputs a request naming the tool and its arguments, and the program runs the tool. |\n| q3 | correct | A step limit is the right stopping condition when the agent keeps repeating itself. |\n| q4 | wrong | The answer is 4 model calls, not 1. The model never runs the three tools inside one call. The program runs them between calls, and the model is called again after each result. |\n| q5 | partial | You said the result goes back to the model, which is right. You left out why: the model needs it to choose its next step or write the final answer. |\n| q6 | partial | Right that the model picks a tool from the names and descriptions it is given. Wrong that it remembers earlier sessions on its own. |\n\nq2 and q4 both come from believing the model runs the tools itself (misconception M4). The q6 slip is a second one: the model has no memory of earlier sessions unless the program sends that information again (M3). The grades file has feedback for each item.\n\nI also added learning record `0003-model-does-not-run-tools-or-remember.md` and updated `NOTES.md`. `submissions/s2.json`, your later attempt, is still ungraded.\n\n**Next step:** redraw your laser-cutter request as a timeline with two columns, \"model\" and \"program\". Mark every model call and every tool run. You should end up with 4 model calls for the three-tool question. That timeline also sets up the next topic, what the model sees each call and how the assistant can remember a student between visits.\n\nDo you want me to grade s2 next?",
+  "ttft_ms": 1269,
+  "type": "result",
+  "duration_ms": 25546,
+  "uuid": "de0323bb-9b85-4b0d-8b09-b28250ac7c87",
+  "ttft_stream_ms": 878,
+  "time_to_request_ms": 95,
+  "first_content_frame_ms": 878,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 8,
+      "outputTokens": 3780,
+      "cacheReadInputTokens": 120660,
+      "cacheCreationInputTokens": 30112,
+      "webSearchRequests": 0,
+      "costUSD": 0.17032999999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 180,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 30112,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-11-25T16:51:56.271Z"
+}

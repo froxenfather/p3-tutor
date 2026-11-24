@@ -1,0 +1,49 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "c",
+      "rationale": "The difference is who owns the control flow: in a workflow, predefined code decides the order of steps (models may be called inside them); in an agent, the model decides its next step and which tools to use. Both can use models (a) and many tools (b), and human approval (d) is a separate design choice.",
+      "distractors": {"a": "M7", "b": "M7", "d": "M7"}
+    },
+    {
+      "id": "q2",
+      "answer": "a",
+      "rationale": "The program's code fixes the order of steps and calls the tool itself, so the code owns the control flow and this is a fixed workflow. Calling the model inside a step (b, d) does not make it an agent; the model never chooses the next step. Option c is wrong because a code-fixed sequence of steps is exactly what a workflow is.",
+      "distractors": {"b": "M7", "c": "M7", "d": "M7"}
+    },
+    {
+      "id": "q3",
+      "answer": 100,
+      "tolerance": 0,
+      "rationale": "A fixed workflow makes the same number of model calls on every request: 2 per request times 50 requests is 100. The calendar check is code, so it adds none. This predictable cost is one advantage of a workflow; an agent's number of calls varies with how many steps the model chooses to take."
+    },
+    {
+      "id": "q4",
+      "answer": "Because the steps are known in advance, code can run them the same way every time, which makes it cheaper, more predictable and easier to test than letting a model decide.",
+      "accepted": [
+        "It is cheaper and more predictable because the model does not have to decide the steps.",
+        "It is more reliable and easier to test, since the steps are fixed in code.",
+        "It uses fewer model calls, so it costs less and behaves the same every time.",
+        "Fixed steps are predictable and cheaper than an agent looping to decide what to do."
+      ],
+      "rationale": "Any one of the real advantages of fixing the steps in code earns full credit: lower and predictable cost, consistent behavior, reliability, or easier testing and debugging. The reason must come from the steps being known ahead of time. Saying only that a workflow is simpler or that agents are worse, with no link to known steps, is partial. Claiming that agents are always smarter or that a workflow needs no model at all shows M7 or M8."
+    },
+    {
+      "id": "q5",
+      "answer": "d",
+      "rationale": "An agent fits when the steps cannot be listed ahead: diagnosing a warping print may need a varying number of manual searches depending on what each result shows. Options a, b and c have known, fixed steps, so a workflow does them more cheaply and predictably.",
+      "distractors": {"a": "M7", "b": "M7", "c": "M7"}
+    },
+    {
+      "id": "q6",
+      "answer": "No: the check is needed on every booking, so code should always run it as a fixed step; letting the model decide adds cost and risks it skipping a required check.",
+      "accepted": [
+        "No, make it a fixed step in code, since it must happen every time and a model decision adds cost and risk of skipping it.",
+        "Disagree: a step that is always required belongs in the workflow, which is cheaper and guarantees it runs."
+      ],
+      "rationale": "Full credit needs the disagreement plus a reason: the step is required every time, so its place in the sequence is known and belongs in code, which guarantees it and saves model calls. Disagreeing with no reason is partial. Agreeing because agents are flexible or smarter shows M7."
+    }
+  ]
+}

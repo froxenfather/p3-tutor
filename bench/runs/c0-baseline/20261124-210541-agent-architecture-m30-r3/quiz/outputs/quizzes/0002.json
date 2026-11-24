@@ -1,0 +1,68 @@
+{
+  "id": "0002",
+  "objective": "O4",
+  "title": "Workflows, agents and who owns the control flow",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Which statement correctly separates a workflow from an agent?",
+      "options": [
+        {"id": "a", "text": "A workflow calls the model once, while an agent calls the model many times"},
+        {"id": "b", "text": "In a workflow, code fixes the steps in advance; in an agent, the model chooses them"},
+        {"id": "c", "text": "A workflow never uses any tools, while an agent is the only one that can"},
+        {"id": "d", "text": "A workflow runs with no model at all, while an agent is built around one"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Your assistant's booking code works like this for every booking message: (1) a model call pulls the machine, date and time out of the message; (2) your Python code calls check_calendar with those values; (3) a second model call writes the reply from the result. Which description is correct?",
+      "options": [
+        {"id": "a", "text": "An agent, because the model is called more than once for one request"},
+        {"id": "b", "text": "An agent, because a calendar tool is used to look up real data"},
+        {"id": "c", "text": "A workflow, because your code fixes the order of the steps every time"},
+        {"id": "d", "text": "A workflow, because the model is called only once for each request"}
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "short",
+      "objective": "O4",
+      "stem": "In one sentence: in an agent, who decides which step comes next, and in a workflow, who decides?"
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Which makerspace task is the best fit for a fixed workflow rather than an agent?",
+      "options": [
+        {"id": "a", "text": "Answering a student's open question that might need manuals, the calendar and training records in any order"},
+        {"id": "b", "text": "Working out why a student's 3D prints keep failing, where each next check depends on the last result"},
+        {"id": "c", "text": "Planning a student's project across several machines, adjusting as the booking calendar turns up conflicts"},
+        {"id": "d", "text": "Emailing staff a list of next week's bookings, pulled from the calendar and formatted the same way every time"}
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "One step in your assistant always happens in the same order, and your model budget is small. Why is a fixed workflow usually the better choice for that step?",
+      "options": [
+        {"id": "a", "text": "Fixed code needs fewer model calls and behaves more predictably than a model choosing each step"},
+        {"id": "b", "text": "A workflow lets the model see a larger context window than an agent can see"},
+        {"id": "c", "text": "A model inside a workflow is smarter, so it can no longer make mistakes in its answers"},
+        {"id": "d", "text": "An agent cannot be given a step limit, so its cost could never be capped at all"}
+      ]
+    },
+    {
+      "id": "q6",
+      "type": "numeric",
+      "objective": "O4",
+      "stem": "A student asks to book the laser cutter. As a fixed workflow, your code does this with 2 model calls (one to extract the details, one to write the reply). As an agent, each model call either requests exactly one tool or writes the final answer, and in one run it requests check_calendar, then search_manuals, then book_machine, and then writes its final answer. How many more model calls does the agent run use than the workflow?",
+      "unit": "model calls"
+    }
+  ]
+}

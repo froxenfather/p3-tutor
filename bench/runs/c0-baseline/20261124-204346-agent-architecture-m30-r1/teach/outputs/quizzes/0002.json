@@ -1,0 +1,56 @@
+{
+  "id": "0002",
+  "objective": "O3",
+  "title": "Context and memory in an agent",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "On Monday a student discusses a booking with your assistant, and the session ends. On Thursday the same student starts a new session and asks, \"What did we decide about my booking?\" Your program saved nothing from Monday. What can the model work from on Thursday?",
+      "options": [
+        {"id": "a", "text": "Monday's conversation, because the model learns from each chat it has"},
+        {"id": "b", "text": "Monday's conversation, kept by the model until the student logs out"},
+        {"id": "c", "text": "Only what is in Thursday's context: the prompt, tools and question"},
+        {"id": "d", "text": "A summary the model wrote itself on Monday and stored in training"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "numeric",
+      "objective": "O3",
+      "stem": "An agent run has a system prompt and tool descriptions of 1,000 tokens in total, and a student question of 100 tokens. The model requests one tool (50 tokens), receives a result of 200 tokens, requests a second tool (50 tokens), receives a result of 200 tokens, and then writes its final answer. That is three model calls, and each call's input is everything so far. How many input tokens are paid for across the three calls in total?",
+      "unit": "tokens"
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "Your assistant states the wrong laser power for engraving wood. The manual is indexed and the correct page exists, but the logs show the search tool returned two other pages. What should you examine first?",
+      "options": [
+        {"id": "a", "text": "How the manual is split into chunks and how the search tool is described"},
+        {"id": "b", "text": "Whether a model with a larger context window would remember the page"},
+        {"id": "c", "text": "How to make the model's instructions more forceful about accuracy"},
+        {"id": "d", "text": "Which part of the manual the model must have memorized in training"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "short",
+      "objective": "O3",
+      "stem": "To remember students, a teammate proposes saving the full transcript of every past session and loading all of them at the start of each new session. In one or two sentences, give one reason this is a poor design and name what to save instead."
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "At a design review a teammate says: \"The model accepts a million tokens, so we should put all twelve manuals into every request and skip retrieval.\" Which response is best?",
+      "options": [
+        {"id": "a", "text": "Fetch only the matching chunks, because every call re-pays for what is included"},
+        {"id": "b", "text": "Agree, because anything that fits in the window is recalled equally well"},
+        {"id": "c", "text": "Agree, because the window is free when the content does not change"},
+        {"id": "d", "text": "Disagree, because the model can only read one manual per request"}
+      ]
+    }
+  ]
+}

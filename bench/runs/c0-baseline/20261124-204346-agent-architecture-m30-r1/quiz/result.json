@@ -1,0 +1,120 @@
+{
+  "duration_api_ms": 46445,
+  "stop_reason": "end_turn",
+  "session_id": "f56fc374-ec4b-4572-8c7d-df4293846a48",
+  "total_cost_usd": 0.1999599,
+  "usage": {
+    "input_tokens": 10,
+    "cache_creation_input_tokens": 30171,
+    "cache_read_input_tokens": 162859,
+    "output_tokens": 6297,
+    "output_tokens_details": {
+      "thinking_tokens": 2484
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 30171,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 380,
+        "cache_read_input_tokens": 43649,
+        "cache_creation_input_tokens": 1550,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1550
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 10,
+      "outputTokens": 6297,
+      "cacheReadInputTokens": 162859,
+      "cacheCreationInputTokens": 30171,
+      "webSearchRequests": 0,
+      "costUSD": 0.1999599,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2484,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 30171,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 12,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Quiz 0002 is ready: six items on O4, in `quizzes/0002.json`. Its key is `keys/0002.json`.\n\nThe quiz is ahead of the lessons, because no lesson on workflows versus agents exists yet. It is a check of the objective itself, and I wrote it from my own knowledge without searching for a source. I answered each item from its stem alone before finishing, and each has one defensible answer. I haven't run any check on the files.\n\nItems are set in the makerspace assistant. They cover:\n- who owns the control flow\n- classifying a design where the model labels a message and the code then branches\n- which assistant task suits a fixed workflow\n- why a workflow is the better choice when the steps never change\n- a hybrid design that mixes workflow and agent\n- a cost calculation that shows what an agent's extra model calls add\n\nThe key introduces three new misconception ids: M7, that the difference is tools, size or step count; M8, that a workflow uses no model; and M9, that an agent is the better design everywhere. `NOTES.md` is unchanged.\n\nDo you want a short lesson on workflows versus agents before Riley takes it, or should they try the quiz first?",
+  "ttft_ms": 1126,
+  "type": "result",
+  "duration_ms": 46655,
+  "uuid": "b65bc2f3-fa3a-40b4-b6bc-a8df447cd73d",
+  "ttft_stream_ms": 803,
+  "time_to_request_ms": 97,
+  "first_content_frame_ms": 803,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 10,
+      "outputTokens": 6297,
+      "cacheReadInputTokens": 162859,
+      "cacheCreationInputTokens": 30171,
+      "webSearchRequests": 0,
+      "costUSD": 0.1999599,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2484,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 30171,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-11-25T16:51:56.271Z"
+}
