@@ -1,0 +1,43 @@
+{
+  "quiz": "0001",
+  "submission": "s1",
+  "items": [
+    {
+      "id": "q1",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Correct: the loop makes it an agent. The model picks an action, it gets run, and the result comes back, like a game loop where each turn reacts to the new state; a longer prompt or bigger model only changes what one call can do. Next: say who does each of those three steps, the model or the program."
+    },
+    {
+      "id": "q2",
+      "verdict": "wrong",
+      "misconception": "M4",
+      "feedback": "Wrong: the model cannot open the booking system. It only produces output, here a structured request: check_calendar with the laser cutter and tomorrow's date. Your program reads that request, runs the function and passes the entries back, much as a game client asks to move and the server actually does it. Next: for a hypothetical tool reserve(machine, time), write what the model outputs and then what your Python code does."
+    },
+    {
+      "id": "q3",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Correct: 40 steps of the same edit and same failure is a stuck loop, and a step limit ends it and reports back. More context or a sterner prompt gives no guarantee it ever stops, and every extra call costs money. Next: name one other stop condition your program could check in this exact situation."
+    },
+    {
+      "id": "q4",
+      "verdict": "wrong",
+      "misconception": "M4",
+      "feedback": "Wrong: the model does not run tools, and it was not called just once. Each call here ends with one tool request or the final answer; the program runs the tool and must call the model again with the result. So three requests take three calls plus one for the answer: 4, which matters for your budget. Next: draw the timeline for a run that uses two tools, labelling each step MODEL or PROGRAM, and count the model calls."
+    },
+    {
+      "id": "q5",
+      "verdict": "partial",
+      "misconception": null,
+      "feedback": "Half an answer: yes, the result goes back to the model, but you skipped the why, which the question asked for. It goes into the model's next input, and the program calls the model again so it can use that result to choose another tool or write the final answer. Next: explain to a teammate what would go wrong if the program ran the tool and stopped there."
+    },
+    {
+      "id": "q6",
+      "verdict": "partial",
+      "misconception": "M3",
+      "feedback": "Your first sentence is right: the model gets each tool's name and description and picks the one that fits. The second is wrong: the model does not remember earlier sessions on its own. It works from its training plus the text in its current input, and your chats do not update that training as they happen; like a game without a save file, anything carried over must be saved by a program and loaded back into the input. Next: for the makerspace assistant, name one fact to keep between visits and say what saves it and what puts it back."
+    }
+  ],
+  "summary": "You identified the loop (q1), the need for a step limit (q3) and the role of tool descriptions (first half of q6). The biggest flaw is thinking the model runs tools itself (q2, q4): it only requests, your program executes, then calls the model again. Also drop the idea that it remembers past sessions by itself (q6), and answer both halves of two-part questions (q5). Next step: trace one booking request, labelling every step MODEL or PROGRAM, and count the model calls."
+}

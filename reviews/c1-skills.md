@@ -55,110 +55,177 @@ The new tutor is good. Its tone is a bit harsh, but that works for me, and I'm b
 - Why: Your thoughts said to keep the tutor and move on to the quiz, so the quiz skill and, in the same pass to save tokens, the grade skill were added, which completes the four jobs.
 
 
+
 ## Major review
 
-**Run:** bench/runs/c1-skills/TODO
+**Run:** bench/runs/c1-skills/20261127-193001-agent-architecture-m30-r1
 
 **Live tries:**
 
-TODO
+Attempted several times to bypass the tutor's guardrails
+and obtain quiz answers. The tutor consistently refused
+without leaking answers. I also asked questions about
+material that was not fully covered in the lesson.
 
 ### Lesson
 
 #### Technical correctness and facts
 
-Rating: TODO
+Rating: 4/5
 
-TODO
+The material presented appears technically correct. However,
+the judge identified one missing fact (F3.4). The issue
+appears to be incomplete coverage rather than misinformation.
+A baseline run also missed this same fact.
 
 #### Pedagogy
 
-Rating: TODO
+Rating: 4/5
 
-TODO
+The teaching structure is effective, and I particularly
+like having to type answers rather than simply clicking a
+show-answer button. The tone and teaching style work well
+for me. However, the lesson feels dense for its duration
+and occasionally leaves important details unexplored.
 
 #### Alignment with the learning goal
 
-Rating: TODO
+Rating: 3/5
 
-TODO
+The lesson teaches the core concepts well but does not
+fully expand upon them or consistently connect all the
+ideas necessary to achieve the broader learning goal.
 
 #### Overall quality
 
-Rating: TODO
+Rating: 4/5
 
-TODO
+The lesson is well structured, uses an effective teaching
+style, and feels appropriate for the requested duration.
+Its biggest weakness is incomplete coverage of important
+material.
 
 ### Quiz
 
 #### Difficulty
 
-Rating: TODO
+Rating: 5/5
 
-TODO
+The questions are appropriately challenging. Each answer
+choice is genuinely plausible without sufficient knowledge
+of the material. The correct answers are not obvious,
+and the questions do not unintentionally reveal them.
 
 #### Coverage of the lesson's core
 
-Rating: TODO
+Rating: 3/5
 
-TODO
+The quiz adequately covers the core concepts presented
+in the lesson. However, because the lesson itself does
+not fully expand on every important concept, the quiz
+coverage also feels incomplete.
 
 #### Wording and possible misreadings
 
-Rating: TODO
+Rating: 5/5
 
-TODO
+The questions and answer choices are clear, concise,
+and unambiguous. I did not encounter any noticeable
+wording issues or misleading interpretations.
 
 #### Writing quality
 
-Rating: TODO
+Rating: 5/5
 
-TODO
+The quiz is exceptionally well written. The questions
+are structured effectively, and the answer choices
+are meaningful without giving away the correct answer.
 
 #### Alignment with the learning goal
 
-Rating: TODO
+Rating: 3/5
 
-TODO
+The quiz effectively tests individual concepts but does
+not always connect those concepts to the broader learning
+goal. More comprehensive questions connecting multiple
+ideas would improve its alignment.
 
 ### Feedback
 
 #### Useful
 
-Rating: TODO
+Rating: 5/5
 
-TODO
+The feedback is constructive, relevant, and useful.
+The tutor understands my questions and helps me work
+through misunderstandings effectively.
 
 #### Explains enough
 
-Rating: TODO
+Rating: 4/5
 
-TODO
+The tutor provides sufficient explanations, even when
+I ask about material that was not covered in the lesson.
+However, it is frustrating to discover important concepts
+through follow-up questions when they should have been
+included in the original lesson.
 
 #### Personalized to how I like things explained
 
-Rating: TODO
+Rating: 5/5
 
-TODO
+The feedback is extremely well personalized to my learning
+preferences. It is direct, appropriately challenging,
+and does not unnecessarily soften corrections.
 
 ### Tutor
 
 #### Guardrails
 
-Rating: TODO
+Rating: 5/5
 
-TODO
+The guardrails are extensive and effective. After several
+attempts to obtain quiz answers or bypass restrictions,
+I was unable to do so. The tutor keeps its refusals short
+without leaking answers or providing unnecessary information.
 
 #### Personalization
 
-Rating: TODO
+Rating: 5/5
 
-TODO
+The tutor's tone and teaching approach align extremely
+well with my learning preferences. Although the tone
+can be harsh, I prefer direct feedback. I also appreciate
+being directed toward the workspace when one is available.
 
 ### Compared with the previous step
 
-TODO
+This configuration improves upon the baseline in lesson
+structure, quiz quality, tutor personalization, and
+guardrail effectiveness.
+
+However, these improvements come at a substantial
+computational cost. Lesson generation consumes approximately
+1.4 times the baseline's tokens, while quiz generation
+consumes approximately 1.9 times as many tokens.
+
+My initial concern was factual correctness, but the judge
+identified a missing fact rather than an incorrect one.
+A baseline run also missed the same fact.
+
+The primary concern moving forward is whether these
+improvements can be maintained while reducing computational
+cost and improving lesson completeness.
 
 ### What the next step should fix
 
-TODO
+- Reduce token consumption without sacrificing teaching,
+  quiz, or tutor quality.
+- Ensure the lesson covers all required facts and concepts.
+- Improve the connections between individual concepts
+  and the broader learning goal.
+- Include important explanations in the original lesson
+  rather than relying on the learner to discover missing
+  material through follow-up questions.
+- Preserve the existing personalization, quiz difficulty,
+  and tutor guardrails.

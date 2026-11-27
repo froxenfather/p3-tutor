@@ -1,0 +1,21 @@
+# Notes
+
+## What Riley knows
+- Python from classes: functions, lists and dicts, reading JSON, and calling a web API in one class project.
+- Has used a chatbot for homework help and report drafts, and has noticed that it can state an outdated fact with confidence.
+- A language model takes text in and writes text out, one token at a time, from patterns learned in training (learning record 0001).
+- The agent loop at a high level: the model asks for an action, the action is carried out, the result comes back, and this repeats until it is done (learning record 0002).
+
+## What Riley does not know yet
+- Has never called a language model from code or written a tool definition.
+- Has heard the words "token" and "context window" but cannot say what they limit or why they affect cost.
+- Has not met memory, retrieval, workflows versus agents, or multi-agent systems.
+- Has no machine-learning background beyond one statistics course.
+
+## Working notes
+- Quiz 0001 (the agent loop and tool calling) was taken twice: `submissions/s1.json` on the day of the agent-loop session, and `submissions/s2.json` four days later, from memory, as spaced practice.
+  `s2` is graded (`grades/0001-s2.json`: 3 correct, 2 partial, 1 wrong); `s1` has not been graded yet.
+- Open from `s2` (learning record 0004): M4, says the model runs tools itself (q4 reason, despite a correct q2); M6, expects a stuck agent to succeed if left running (q3); names only the tool's name as how the model chooses a tool (q6).
+- Shown in `s2` (learning record 0003): the loop defines an agent, and tool results go back to the model to guide the next step.
+- Next: a MODEL/PROGRAM trace of one request with a step limit, then re-check M4, M6 and tool descriptions.
+- After that, the mission moves to context and memory, because the makerspace assistant has to answer from long machine manuals and remember each student's training status between visits.

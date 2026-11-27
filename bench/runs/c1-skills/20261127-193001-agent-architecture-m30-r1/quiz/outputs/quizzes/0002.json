@@ -1,0 +1,68 @@
+{
+  "id": "0002",
+  "objective": "O4",
+  "title": "Workflows or agents: who owns the control flow?",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Your team sketches four designs for handling a student's request in the makerspace assistant. Which one is a fixed workflow?",
+      "options": [
+        {"id": "a", "text": "The model reads each question and picks which tool to call next"},
+        {"id": "b", "text": "Your code always checks the calendar, then the model writes a reply"},
+        {"id": "c", "text": "The model picks each tool, but only from a list of three"},
+        {"id": "d", "text": "Your code runs each tool the model requests until the model finishes"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "short",
+      "objective": "O4",
+      "stem": "A program sends each student question to a model, which labels it \"manual\" or \"booking\". An if-statement in the program then runs the fixed series of steps written for that label. Is this system a workflow or an agent?"
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Every booking in your makerspace must follow the same steps: check the student's training record, check the calendar, then reserve the slot. The training check must never be skipped. The student picks the machine and time on a form. Which design and reason are best?",
+      "options": [
+        {"id": "a", "text": "An agent, because three tools are involved and tools require an agent"},
+        {"id": "b", "text": "An agent, because a firm prompt guarantees the check always happens first"},
+        {"id": "c", "text": "A workflow, because fixed code can handle any request a student types"},
+        {"id": "d", "text": "A workflow, because the steps are known and none may be skipped"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "numeric",
+      "objective": "O4",
+      "stem": "For the same kind of request, your fixed workflow makes exactly 2 model calls and an agent design makes 5 model calls on average. Assume every call costs $0.005 (half a cent) and there are 400 requests per week. How many more dollars per week does the agent design cost than the workflow?",
+      "unit": "dollars"
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Your agent lets the model choose each tool call until it writes a final answer. A teammate says, \"We added a 10-step limit in our code, so it is now a fixed workflow.\" Which reply is right?",
+      "options": [
+        {"id": "a", "text": "Agreed, since code that can end the loop also owns each step"},
+        {"id": "b", "text": "Agreed, since a run with a known maximum follows a fixed path"},
+        {"id": "c", "text": "Disagree, since the model still chooses each step within that limit"},
+        {"id": "d", "text": "Disagree, since only removing all of its tools could make it one"}
+      ]
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Which makerspace task gives the strongest reason to use an agent rather than a fixed workflow?",
+      "options": [
+        {"id": "a", "text": "Diagnosing a failed print, where each finding decides what to check next"},
+        {"id": "b", "text": "Sending each student the same confirmation message after a booking is saved"},
+        {"id": "c", "text": "Building a weekly report by running the same five queries in order"},
+        {"id": "d", "text": "Looking up one machine's opening hours in a table and showing them"}
+      ]
+    }
+  ]
+}

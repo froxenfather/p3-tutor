@@ -1,0 +1,120 @@
+{
+  "duration_api_ms": 16223,
+  "stop_reason": "end_turn",
+  "session_id": "9a458196-6232-4ba6-9a11-6860ace170c9",
+  "total_cost_usd": 0.0991537,
+  "usage": {
+    "input_tokens": 8,
+    "cache_creation_input_tokens": 17134,
+    "cache_read_input_tokens": 99017,
+    "output_tokens": 2070,
+    "output_tokens_details": {
+      "thinking_tokens": 381
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 17134,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 723,
+        "cache_read_input_tokens": 31528,
+        "cache_creation_input_tokens": 633,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 633
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 8,
+      "outputTokens": 2070,
+      "cacheReadInputTokens": 99017,
+      "cacheCreationInputTokens": 17134,
+      "webSearchRequests": 0,
+      "costUSD": 0.0991537,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 381,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 17134,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 10,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "**Neither. \"More agents always give better results\" is false.** Start with **one agent** and a few good tools.\n\n**The goal** is correct answers and bookings at a cost your sponsor's budget can cover. Agent count only matters if it helps with that.\n\n**What splitting means:** in a multi-agent system, several model-driven loops each handle part of a job and pass information between them.\n\n**Why more can be worse**\n- **Cost:** models charge by the **token** (a chunk of text, often a word or part of one). Agents repeat instructions and share context, so you tend to pay for more tokens.\n- **Lost information:** an agent knows only what it's given. A handoff can drop a detail, such as which machine the student meant.\n- **Debugging:** a wrong booking now has more places to have gone wrong.\n- **Delay:** steps that wait on each other don't get faster because you gave them separate agents.\n\n**Why it's tempting:** more workers sounds like more output. But think of a co-op game: ten players help if there are separate objectives and good communication. Ten players sharing one controller-sized task mostly create coordination work.\n\n**When splitting can pay off**\n- Subtasks are largely independent and can run in parallel.\n- One agent is demonstrably struggling, for example because it has too many tools or too much unrelated material to handle well.\n- The quality or speed gain is worth the extra cost.\n\n**Example:** \"Is the laser cutter free Friday, and can you book it?\" The booking depends on what the calendar says. A \"calendar agent\" handing off to a \"booking agent\" adds a handoff, with no obvious benefit.\n\n**For your design review:** \"We start with one agent, test it on real student requests, and split only if a measured failure justifies it.\"\n\n**Check:** which has the stronger case for splitting, and why?\n- (A) Researching three unrelated machines' manuals at once for a comparison report\n- (B) Checking one student's training status and then booking a machine\n\n**Your turn:** write down five realistic student requests. For each, list the steps, mark which depend on an earlier step, and note what a single agent might struggle with. Send it to me and I'll challenge it. A lesson on workflows, agents and multi-agent systems can come later; context and memory is next in your mission.",
+  "ttft_ms": 1042,
+  "type": "result",
+  "duration_ms": 16394,
+  "uuid": "8dc6d09b-f537-44bd-b902-40bd80cd225c",
+  "ttft_stream_ms": 624,
+  "time_to_request_ms": 98,
+  "first_content_frame_ms": 624,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 8,
+      "outputTokens": 2070,
+      "cacheReadInputTokens": 99017,
+      "cacheCreationInputTokens": 17134,
+      "webSearchRequests": 0,
+      "costUSD": 0.0991537,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 381,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 17134,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-12-26T00:34:08.492Z"
+}

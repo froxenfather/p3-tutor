@@ -1,0 +1,37 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "b",
+      "rationale": "In a workflow the path is written in code in advance: here the code fixes the sequence and the model only fills in one step. In a, c and d the model chooses what happens next; a short tool list (c) or code that executes the requested tools (d) does not move that choice to the code."
+    },
+    {
+      "id": "q2",
+      "answer": "workflow",
+      "accepted": ["a workflow", "fixed workflow", "a fixed workflow", "it is a workflow", "it's a workflow"],
+      "rationale": "The model makes one classification, but the code defines every possible path and which one each label triggers, so the code owns the control flow (routing). Answering agent suggests that any decision by a model makes a system an agent."
+    },
+    {
+      "id": "q3",
+      "answer": "d",
+      "rationale": "The steps and their order are known and the inputs come from a form, so code can enforce them every time. Using tools does not require an agent (a), a prompt cannot guarantee a step (b), and fixed code does not handle arbitrary requests (c)."
+    },
+    {
+      "id": "q4",
+      "answer": 6,
+      "tolerance": 0.005,
+      "rationale": "The agent makes 5 - 2 = 3 extra calls per request, so 3 x 400 x $0.005 = $6 per week. An answer of 10 is the agent's total cost and 4 is the workflow's, not the difference."
+    },
+    {
+      "id": "q5",
+      "answer": "c",
+      "rationale": "A step limit is a stopping condition that bounds the run, but the model still decides which action comes next, so the system is still an agent. Code that can cut the loop off (a) or a maximum length (b) does not predefine the path, and a workflow can use tools (d)."
+    },
+    {
+      "id": "q6",
+      "answer": "a",
+      "rationale": "The next step depends on what the last one found, so the path is hard to write in advance, which is where model-directed control pays for its extra cost and unpredictability. The other tasks have steps known beforehand and suit fixed code."
+    }
+  ]
+}

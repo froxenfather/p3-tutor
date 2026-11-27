@@ -1,0 +1,120 @@
+{
+  "duration_api_ms": 15792,
+  "stop_reason": "end_turn",
+  "session_id": "e5552efa-da52-416a-bd4b-9add6fdc4857",
+  "total_cost_usd": 0.09715829999999999,
+  "usage": {
+    "input_tokens": 8,
+    "cache_creation_input_tokens": 17456,
+    "cache_read_input_tokens": 98483,
+    "output_tokens": 1747,
+    "output_tokens_details": {
+      "thinking_tokens": 683
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 17456,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 524,
+        "cache_read_input_tokens": 31640,
+        "cache_creation_input_tokens": 843,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 843
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 8,
+      "outputTokens": 1747,
+      "cacheReadInputTokens": 98483,
+      "cacheCreationInputTokens": 17456,
+      "webSearchRequests": 0,
+      "costUSD": 0.09715829999999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 683,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 17456,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 4,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "**No, that's wrong.** A language model doesn't remember earlier conversations on its own. If you design the assistant on that assumption, a returning student gets a blank slate.\n\n**Why:** you already know the model only has what it learned in training plus the text it's given. Chatting with it doesn't update that training. Last week's conversation is available only if that information is put into this request's input.\n\n**Why it's tempting:** chat apps can seem to remember you. That comes from software around the model saving text and feeding it back in.\n\n**Analogy:** think of a game with save files. The model is the game freshly booted, with no save loaded. Your program has to:\n\n1. **Save** what matters after a visit, such as in a file or database.\n2. **Load** that student's record when they return.\n3. **Include** it in the model's input (its **context**).\n\nThe analogy breaks here: a game restores its exact state, while the model just reads whatever text you give it.\n\n**Example:** on Monday, Sam says, \"I only want to use the Prusa printer.\" On the next Monday, Sam asks, \"Book my usual machine.\" Your program must have saved that preference under Sam's ID and included it in the new input. Otherwise the model has no way to know what \"usual\" means, and might guess.\n\n**Your check:** you ship the assistant with no saving code. A student says on Tuesday, \"I finished laser training,\" then returns Friday and asks, \"Am I trained?\" What does the model have to work with, and what's missing?\n\n**Then try this:** pick three things a student might tell your assistant. For each, decide whether to save it, and justify the choice. Remember that more text in the input generally costs more, and your budget is small.",
+  "ttft_ms": 1270,
+  "type": "result",
+  "duration_ms": 16944,
+  "uuid": "cf81ab69-ff20-49ae-8db3-7923beb1c7c4",
+  "ttft_stream_ms": 570,
+  "time_to_request_ms": 88,
+  "first_content_frame_ms": 570,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 8,
+      "outputTokens": 1747,
+      "cacheReadInputTokens": 98483,
+      "cacheCreationInputTokens": 17456,
+      "webSearchRequests": 0,
+      "costUSD": 0.09715829999999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 683,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 17456,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-12-26T00:34:08.492Z"
+}

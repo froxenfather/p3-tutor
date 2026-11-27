@@ -1,0 +1,43 @@
+{
+  "quiz": "0001",
+  "submission": "s2",
+  "items": [
+    {
+      "id": "q1",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Correct: the loop is what makes it an agent (the model picks an action, it gets run, the result comes back). A longer prompt or a bigger model only changes what happens inside one call, like upgrading a character's stats without adding a game loop. Next: say what ends that loop, which is where q3 went wrong."
+    },
+    {
+      "id": "q2",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Correct: the model outputs a request naming check_calendar and its arguments, and nothing has run yet. Your q4 reason contradicts this by saying the model runs the tool itself, so I don't count the idea as solid. Next: explain in one sentence what has to happen between that request and a calendar entry existing in the model's input, naming who does each step."
+    },
+    {
+      "id": "q3",
+      "verdict": "wrong",
+      "misconception": "M6",
+      "feedback": "Wrong: more time does not fix an agent that keeps making the same edit and getting the same failure, with all 40 attempts already in front of it. The flaw is assuming that repetition guarantees progress; it is a while loop whose exit condition may never become true, burning your sponsor's budget on every pass. The program needs a step limit that stops the run and reports what happened. Next: for the makerspace assistant, write down a limit you would set and what the student should see when it is hit."
+    },
+    {
+      "id": "q4",
+      "verdict": "partial",
+      "misconception": "M4",
+      "feedback": "The number 4 is right, and so is the pattern of three tool requests plus one final answer. Your reason is wrong: the model never runs a tool. On each call it only outputs a request; your program runs the function and passes the result into the next call, like a game client sending 'open door' while the server does the opening. Next: redo your trace with each step labelled MODEL or PROGRAM."
+    },
+    {
+      "id": "q5",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Correct, with both halves: the result goes back in as input, and the model uses it to decide what to do next. Your group chat analogy works if the program is the one posting the tool's reply and then calling the model again; 'next step' can also mean writing the final answer. Next: say what the model would know about the booking if the program ran the tool but never sent the result back."
+    },
+    {
+      "id": "q6",
+      "verdict": "partial",
+      "misconception": null,
+      "feedback": "Partly right: the name is one clue, but you left out most of what the model reads. The program gives it each tool's name, a description of what it does and the parameters it takes, and it picks the one that fits the need. A name alone can mislead: check_calendar could mean the machine booking calendar or the academic calendar, much like a function called process() with no docstring. Next: write a description for check_calendar that says what it does, when to use it and what each parameter means."
+    }
+  ],
+  "summary": "Three correct (q1, q2, q5), two partial (q4, q6), one wrong (q3). You have the shape of the loop and you know results go back to the model. Fix first: the model only requests a tool and your program runs it (your q4 reason says the opposite). Also fix: a loop needs a stopping condition such as a step limit (q3), and the model chooses tools from their full descriptions, not just their names (q6). Next step: trace 'Is the laser cutter free tomorrow at 3 pm?' on paper, label every step MODEL or PROGRAM, and mark where a step limit would be checked."
+}

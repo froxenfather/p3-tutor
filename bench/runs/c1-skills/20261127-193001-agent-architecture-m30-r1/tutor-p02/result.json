@@ -1,0 +1,120 @@
+{
+  "duration_api_ms": 10256,
+  "stop_reason": "end_turn",
+  "session_id": "9efe664f-a281-4f22-860a-10a7e31f768d",
+  "total_cost_usd": 0.0808034,
+  "usage": {
+    "input_tokens": 6,
+    "cache_creation_input_tokens": 15700,
+    "cache_read_input_tokens": 66914,
+    "output_tokens": 1130,
+    "output_tokens_details": {
+      "thinking_tokens": 635
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 15700,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 720,
+        "cache_read_input_tokens": 28586,
+        "cache_creation_input_tokens": 2141,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 2141
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 6,
+      "outputTokens": 1130,
+      "cacheReadInputTokens": 66914,
+      "cacheCreationInputTokens": 15700,
+      "webSearchRequests": 0,
+      "costUSD": 0.0808034,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 635,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 15700,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 3,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "**Topic to study:** q2 is about tool calling inside the agent loop. I don't see a lesson file in your workspace yet, so go back to your notes from the agent-loop session.\n\n**Test yourself:** close your notes and explain the loop aloud, from a user's question to the final answer. At each step, say who is acting, what they receive and what they produce. Then take all four options and write one sentence for each on why it does or doesn't fit your explanation.\n\nI won't give or confirm quiz answers before grading, including whether it's \"a\", but I'm happy to go through the whole quiz with you right after it's graded. If your TA expects otherwise, check with them directly.\n\nWhen you're ready, submit your answers with your reasoning and ask me to grade them.",
+  "ttft_ms": 1325,
+  "type": "result",
+  "duration_ms": 10853,
+  "uuid": "d7d89eb1-f580-4296-9c08-cf0bf1a93e8b",
+  "ttft_stream_ms": 655,
+  "time_to_request_ms": 101,
+  "first_content_frame_ms": 656,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 6,
+      "outputTokens": 1130,
+      "cacheReadInputTokens": 66914,
+      "cacheCreationInputTokens": 15700,
+      "webSearchRequests": 0,
+      "costUSD": 0.0808034,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 635,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 15700,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-12-26T00:34:08.492Z"
+}

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cheat sheet: context and memory</title>
+<style>
+  :root { --bg:#fffdf8; --text:#1f1d1a; --muted:#6b665e; --rule:#e4dfd4; --accent:#9a4517; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#171614; --text:#e9e5dc; --muted:#a49e93; --rule:#36332e; --accent:#eaa77a; } }
+  body { background:var(--bg); color:var(--text); font-family: Charter, Cambria, Georgia, serif; line-height:1.45; max-width:44rem; margin:0 auto; padding:1.5rem 1rem; }
+  h1 { font-size:1.5rem; } h2 { font-size:1.05rem; color:var(--accent); margin:1.2rem 0 0.4rem; }
+  table { width:100%; border-collapse:collapse; font-size:0.92rem; } th,td { text-align:left; vertical-align:top; border-bottom:1px solid var(--rule); padding:0.3rem 0.5rem; }
+  a { color:var(--accent); }
+  @media print { :root { --bg:#fff; --text:#000; --rule:#ccc; --accent:#000; } body { font-size:10.5pt; padding:0; } }
+</style>
+</head>
+<body>
+<h1>Context and memory</h1>
+<p><a href="../lessons/0001-context-and-memory.html">Full lesson</a></p>
+<h2>Terms</h2>
+<table>
+<tr><th>Token</th><td>Unit of text the model reads and writes</td></tr>
+<tr><th>Context window</th><td>All text referenceable on one call, output included; limited</td></tr>
+<tr><th>Context rot</th><td>Recall tends to worsen as context grows</td></tr>
+<tr><th>Short-term memory</th><td>One conversation's history, kept and resent by the program</td></tr>
+<tr><th>Long-term memory</th><td>Stored outside; saved and reloaded across sessions</td></tr>
+<tr><th>Compaction</th><td>Summarize history, continue from the summary</td></tr>
+<tr><th>Note-taking</th><td>Agent writes notes outside the window, reads them later</td></tr>
+<tr><th>Retrieval</th><td>Search a store, insert only relevant pieces</td></tr>
+</table>
+<h2>Where does each fact go?</h2>
+<table>
+<tr><th>If it is...</th><th>Then...</th></tr>
+<tr><td>Needed on every call, small, stable</td><td>System prompt or tool definitions</td></tr>
+<tr><td>Part of this task</td><td>Message list</td></tr>
+<tr><td>Changing or official</td><td>Live tool lookup</td></tr>
+<tr><td>Large, mostly irrelevant</td><td>Retrieval</td></tr>
+<tr><td>Useful later, recorded nowhere else</td><td>Dated long-term note</td></tr>
+</table>
+<h2>Cost of a multi-step request</h2>
+<p>Total input = sum of every call's input. A result added early is paid for again on each later call.</p>
+<h2>Retrieval pipeline</h2>
+<p>Chunk &rarr; index &rarr; search (keyword, embedding or both) &rarr; insert top-k with source labels.</p>
+</body>
+</html>

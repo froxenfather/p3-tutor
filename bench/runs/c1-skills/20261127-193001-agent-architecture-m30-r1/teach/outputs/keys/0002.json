@@ -1,0 +1,41 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "b",
+      "rationale": "A stateless call sees only the text sent with it plus training, and no earlier chat is saved or resent. Options a, c and d assume the model retains conversations by itself.",
+      "distractors": {"a": "M3", "c": "M3", "d": "M3"}
+    },
+    {
+      "id": "q2",
+      "answer": 4500,
+      "tolerance": 0,
+      "rationale": "The calls carry 1,000, 1,500 and 2,000 tokens, which sum to 4,500. An answer of 2,000 counts only the last call and misses that earlier text is sent again."
+    },
+    {
+      "id": "q3",
+      "answer": "It summarizes the history so far, keeping what matters, and continues in a fresh context that starts from that summary.",
+      "accepted": [
+        "It summarizes the conversation and starts a new context with the summary.",
+        "It replaces the long history with a shorter summary of the important parts so the agent can carry on."
+      ],
+      "rationale": "Full credit needs both the summarizing (or condensing) of history and continuing with the shorter version in place of the full history. Only one of the two is partial. Switching to a larger window, or simply deleting everything, is wrong."
+    },
+    {
+      "id": "q4",
+      "answer": "d",
+      "rationale": "Retrieval puts only the relevant passages in the context. First pages are unlikely to hold the procedure, training may be stale or generic, and loading everything is the thing the stem rules out.",
+      "distractors": {}
+    },
+    {
+      "id": "q5",
+      "answer": "The progress must be written to a note stored outside the context, and that note must be loaded into the new session's context.",
+      "accepted": [
+        "Save a note in storage, then load it back into the context tomorrow.",
+        "The agent writes its progress to a file, and the program reads the file into the next context."
+      ],
+      "rationale": "Full credit needs saving outside the context and reading it back into the new context. Saving alone is partial. Saying the model will remember the progress by itself shows M3."
+    }
+  ]
+}

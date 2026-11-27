@@ -1,0 +1,50 @@
+{
+  "id": "0002",
+  "objective": "O3",
+  "title": "Context and memory",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "A teammate says, \"After a few hundred student chats, our assistant will know the common questions on its own.\" The program stores nothing between sessions, uses a basic stateless model API, and never retrains the model. Which statement is true?",
+      "options": [
+        {"id": "a", "text": "The model learns from each chat, so common questions become familiar ones"},
+        {"id": "b", "text": "No past chat reaches a new call, so nothing builds up from them"},
+        {"id": "c", "text": "The window keeps old chats until full, so recent questions stay known"},
+        {"id": "d", "text": "The model keeps faint traces of chats, so frequent questions slowly stick"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "numeric",
+      "objective": "O3",
+      "stem": "An agent's first model call has 1,000 input tokens. Before the second call, and again before the third, the program adds 500 tokens to the history and resends the whole history. There are exactly three calls. How many input tokens are sent in total across all three?",
+      "unit": "tokens"
+    },
+    {
+      "id": "q3",
+      "type": "short",
+      "objective": "O3",
+      "stem": "A very long agent task is close to filling its context window, but it is not finished. In one or two sentences, describe what compaction does so the task can continue."
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "Your makerspace has 40 long manuals, far too much text to send on each call. A student asks how to replace the blade on the bandsaw. Which approach fits best?",
+      "options": [
+        {"id": "a", "text": "Send the opening pages of every manual, so each machine is covered"},
+        {"id": "b", "text": "Let the model answer from training, so no manual text is sent"},
+        {"id": "c", "text": "Save every manual as long-term memory, and load it all each visit"},
+        {"id": "d", "text": "Search the manuals, and put only the best matching passages in context"}
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "short",
+      "objective": "O3",
+      "stem": "An agent is partway through a task that will continue in a new session tomorrow, with a fresh context. Using notes as memory, what two things must happen so that tomorrow's model call knows the progress?"
+    }
+  ]
+}
