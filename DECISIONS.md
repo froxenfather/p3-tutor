@@ -26,7 +26,7 @@ They are about what you chose and what you saw, and the Builder and the Guide ne
 Of everything you changed while building `c1-skills`, which one change to a skill made the biggest difference, and how do you know?
 Name the round, and give the evidence: a rating that moved, a check in `REPORT.md` that moved, or a quote from an output before and after.
 
-TODO: your answer to prompt 1.
+In Round 1, I modified the show-answer buttons to require user input before revealing the answer or allowing the student to continue with the lesson. This encourages students to actively recall and apply what they have learned rather than simply revealing the answer, thinking "Okay, this makes sense," and moving on. When I tested this change myself, I found that I slowed down, thought more critically about the material, and made a genuine effort to answer each question. Although I did not formally measure retention, my experience suggests that requiring active participation creates a more engaging and effective learning experience. The baseline lesson had 12 answer buttons, and the c1-skills lesson has 0 buttons and 7 typed-answer boxes.
 
 ---
 
